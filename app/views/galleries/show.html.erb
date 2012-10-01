@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @gallery.title %>
+</p>
+
+<p>
+  <b>Subtitle:</b>
+  <%= @gallery.subtitle %>
+</p>
+
+<p>
+  <b>Likes:</b>
+  <%= @gallery.likes %>
+</p>
+
+<p>
+  <b>Thumbnail:</b>
+  <%= @gallery.thumbnail %>
+</p>
+
+
+<%= link_to 'Edit', edit_portfolio_gallery_path(@gallery) %> |
+<%= link_to 'Back', portfolio_galleries_path %>

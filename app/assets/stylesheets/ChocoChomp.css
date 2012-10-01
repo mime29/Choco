@@ -1,0 +1,134 @@
+
+body{
+	padding:0px;
+	margin:0px;
+	height: 100%;
+	background: -moz-linear-gradient(100% 100% 90deg, #57483b, #7f6f61);
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#7f6f61), to(#57483b)) fixed;
+}
+
+A:link {text-decoration: none}
+A:visited {text-decoration: none}
+A:active {text-decoration: none}
+A:hover {text-decoration: none;}
+
+ul {
+	list-style: none;
+	padding:0px;
+}
+
+ul.listingSelection li {
+	float: left;
+	position: relative;
+	margin-right: 14px;
+	margin-bottom:20px;
+	width: 237px;
+	height: 202px;
+}
+
+
+ul.listingSelection li div.titre {
+	position: absolute;
+	left: 0px;
+	bottom: 0px;
+	text-indent: 5px;
+	color:#FF6000;
+	font-size: 0.7em;
+	font-family: Arial; 
+    font-weight: normal;
+	font-style:italic;
+}
+
+ul.listingSelection li div.description {
+	position: absolute;
+	left: 0px;
+	width: 224px;
+	height: 34px;
+	bottom: 0px;
+	text-indent: 5px;
+	padding-top:2px;
+	background: rgba(0, 0, 0, 0.5);
+	color:#FFFFFF;
+	font-size: 0.7em;
+	font-family: Arial; 
+    font-weight: normal; 
+}
+
+.sprite-global.selectionSemaineBGT_png {
+	width: 224px;
+	height: 20px;
+}
+
+.sprite-global {
+	/*background: rgba(142, 142, 255, 0.6);*/
+}
+
+.brownBar {
+	position: absolute;
+	right: 0px;
+	width: 11px;
+	height: 36px;
+	bottom: 0px;
+	background: -moz-linear-gradient(100% 100% 90deg, #57483b, #7f6f61);
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#7f6f61), to(#57483b));
+	/*background: rgba(145, 92, 57, 1);*/
+}
+
+ul.listingSelection li a img{
+	width:223px;
+	height:149px;
+	border-style:solid;
+	border-width:7px;
+	border-color:#4a3d32;
+}
+
+ul.listingSelection li:hover img{
+	border-color:#bce0f7;
+}
+
+.mainContainer{
+	position: absolute;
+	left: 0px;
+	top:0px;
+	padding:0px;
+	margin:0px;
+	width: 100%;
+}
+
+.titleContainer{
+	height:86px;
+	background-image:url('logo_blanc.png');
+	background-repeat:no-repeat;
+}
+.themeSelectorContainer{
+	margin-left:16px;
+}
+.themeBrown{
+	padding:2px;
+	float:left;
+}
+.themeWhite{
+	padding:2px;
+}
+
+.contentContainer{
+	padding-left:16px;
+	width:97%;
+}
+
+
+.contentEndingDots{
+	position:relative;
+	float:left;
+	width:100%;
+	font-size: 1.4em;
+	color: #999999;
+}
+
+.copyrightContainer{
+	position:relative;
+	float:left;
+	width:100%;
+	font-size: 0.7em;
+	color:#cccccc;
+}

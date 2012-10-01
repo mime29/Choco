@@ -1,0 +1,386 @@
+	
+	<script>
+		$(document).ready(function(){
+			/*$('div.contentContainer> div').hide();  
+			  $('div.contentContainer> h3').click(function() {
+			    var $nextDiv = $(this).next();
+			    var $visibleSiblings = $nextDiv.siblings('div:visible');
+				
+			    if ($visibleSiblings.length ) {
+			      $visibleSiblings.slideUp('fast', function() {
+			        $nextDiv.slideToggle('fast');
+			      });
+			    } else {
+			       $nextDiv.slideToggle('fast');
+			    }
+			});*/
+			  
+			$("a#inline").fancybox({
+				'titleShow'     : false
+			});
+			
+			$("a.grouped_elements").fancybox();
+		
+			$('.styleswitch').click(function()
+			{
+				switchStylestyle(this.getAttribute("rel"));
+				return false;
+			});
+			/*var c = readCookie('style');
+			if (c) switchStylestyle(c);*/
+
+			function switchStylestyle(styleName)
+			{
+				$('link[rel*=style][title][rel]').each(function(i) 
+				{
+					this.disabled = true;
+					if (this.getAttribute('title') == styleName) this.disabled = false;
+				});
+				/*createCookie('style', styleName, 365);*/
+			}
+	
+		
+			$("#gyukaku").click(function() {
+				$.fancybox([
+					'/assets/gyukaku/01.jpg',
+					'/assets/gyukaku/02.jpg',
+					{
+						'href'	: '/assets/gyukaku/03.jpg',
+						'title'	: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit'
+					},
+					'/assets/gyukaku/04.jpg',
+					'/assets/gyukaku/05.jpg',
+					'/assets/gyukaku/06.jpg'
+				], {
+					'padding'			: 10,
+					'transitionIn'		: 'none',
+					'transitionOut'		: 'none',
+					'type'              : 'image',
+					'changeFade'        : 150,
+					'titlePosition'  : 'over'
+				});
+			});
+			
+		
+     	});
+		
+   </script>
+
+
+
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @portfolio.title %>
+</p>
+
+<% @portfolio.galleries.each do |gallerie| %>
+  <p>
+    test
+  </p>
+  <% @gallerie.arts.each do |art| %>
+  <% end %>
+<% end %>
+
+
+
+
+<div class="mainContainer">
+	<div class="titleContainer">
+		
+	</div>
+	<div class="themeSelectorContainer">
+		<div class="themeBrown"><a href="?style=ChocoChomp" rel="ChocoChomp" class="styleswitch"><img src="/assets/carre_marron.png"/></a></div>
+		<div class="themeWhite"><a href="?style=ChocoChompWhite" rel="ChocoChompWhite" class="styleswitch"><img src="/assets/carre_blanc.png"/></a></div>
+	</div>
+	
+	<div class="contentContainer">
+		<ul class="listingSelection">
+			<li>
+				<a id="inline" href="#data">
+					<img src="/assets/About.jpg" alt="" title="Jeremy Godefroid">
+					<div class="description sprite-global selectionSemaineBGB_png">
+						<span class="bleu1">Information &bull; Who?</span>
+					</div>
+					<div class="titre sprite-global selectionSemaineBGT_png">
+						<span>// Contact</span>
+					</div>
+					<div class="brownBar"></div>
+				</a>
+				
+			</li>
+				<li>
+				<a  id="gyukaku" href="javascript:;" title="Gyukaku">
+					<img src="/assets/gyukaku.jpg" alt="" title="gyukaku">
+					<div class="description sprite-global selectionSemaineBGB_png">
+						<span class="bleu1">Gyukaku &bull; Poster for a Japanese restaurant</span>
+					</div>
+					<div class="titre sprite-global selectionSemaineBGT_png">
+						<span>// Prints</span>
+					</div>
+					<div class="brownBar"></div>
+				</a>
+			</li>
+				<li>
+				<a  id="wired" href="javascript:;" title="Wired">
+					<img src="/assets/Wired.jpg" alt="" title="Wired Cafe">
+					<div class="description sprite-global selectionSemaineBGB_png">
+						<span class="bleu1">Wired Cafe &bull; Poster for a Japanese bar</span>
+					</div>
+					<div class="titre sprite-global selectionSemaineBGT_png">
+						<span>// Prints</span>
+					</div>
+					<div class="brownBar"></div>
+				</a>
+			</li>
+			<li>
+				<a  id="vexels" href="javascript:;" title="Vexels">
+					<img src="Vexels.jpg" alt="" title="Vexels">
+					<div class="description sprite-global selectionSemaineBGB_png">
+						<span class="bleu1">Portrait &bull; Vexel Playground</span>
+					</div>
+					<div class="titre sprite-global selectionSemaineBGT_png">
+						<span>// Prints</span>
+					</div>
+					<div class="brownBar"></div>
+				</a>
+			</li>
+			<li>
+				<a  id="example1" href="http://2.im6.fr/-31772-photo-crop-pa7d97a8a75838789af108340ca964e1e-emissions-reportages-selection-avril.jpg?options=eNoryywqKU3N0TU2NDc3AgAitAQ9&amp;width=272&amp;height=153" title="Selection de la Rédac : avril 2011 avec Portal 2, Outland et Virtua Tennis 4">
+					<img src="/assets/Self.jpg" alt="" title="Self">
+					<div class="description sprite-global selectionSemaineBGB_png">
+						<span class="bleu1">Self-Portrait &bull; Photo manipulation</span>
+					</div>
+					<div class="titre sprite-global selectionSemaineBGT_png">
+						<span>// Prints</span>
+					</div>
+					<div class="brownBar"></div>
+				</a>
+			</li>
+			<li>
+				<a id="example1" href="http://2.im6.fr/0110009904289538-c2-photo-oYToxOntzOjE6InciO2k6MjcyO30%3D-call-of-duty-modern-warfare-3.jpg">
+					<img src="/assets/ebook_web.jpg" alt="" title="eBook">
+					<div class="description sprite-global selectionSemaineBGB_png">
+						<span class="bleu1">Orange &bull; Print & go platform</span>
+					</div>
+					<div class="titre sprite-global selectionSemaineBGT_png">
+						<span>// Web design</span>
+					</div>
+					<div class="brownBar"></div>
+				</a>
+			</li>
+			<li>
+				<a id="portfolio" href="javascript:;">
+					<img src="/assets/choco_web.jpg" alt="" title="Portfolios">
+					<div class="description sprite-global selectionSemaineBGB_png">
+						<span class="bleu1">Chocochomp &bull; Portfolios</span>
+					</div>
+					<div class="titre sprite-global selectionSemaineBGT_png">
+						<span>// Web design</span>
+					</div>
+					<div class="brownBar"></div>
+				</a>
+			</li>
+			<li>
+				<a id="example1" href="http://2.im6.fr/0110009904289538-c2-photo-oYToxOntzOjE6InciO2k6MjcyO30%3D-call-of-duty-modern-warfare-3.jpg">
+					<img src="/assets/MR_concept.jpg" alt="" title="MR concept">
+					<div class="description sprite-global selectionSemaineBGB_png">
+						<span class="bleu1">Orange &bull; Mixed Reality concepts</span>
+					</div>
+					<div class="titre sprite-global selectionSemaineBGT_png">
+						<span>// Interaction design</span>
+					</div>
+					<div class="brownBar"></div>
+				</a>
+			</li>
+			<li>
+				<a id="example1" href="http://2.im6.fr/0110009904289538-c2-photo-oYToxOntzOjE6InciO2k6MjcyO30%3D-call-of-duty-modern-warfare-3.jpg">
+					<img src="/assets/e-book.jpg" alt="" title="eBook">
+					<div class="description sprite-global selectionSemaineBGB_png">
+						<span class="bleu1">Orange &bull; eBook interfaces</span>
+					</div>
+					<div class="titre sprite-global selectionSemaineBGT_png">
+						<span>// Interaction design</span>
+					</div>
+					<div class="brownBar"></div>
+				</a>
+			</li>
+			<li>
+				<a id="example1" href="http://2.im6.fr/0110009904289538-c2-photo-oYToxOntzOjE6InciO2k6MjcyO30%3D-call-of-duty-modern-warfare-3.jpg">
+					<img src="/assets/Me.jpg" alt="" title="Me">
+					<div class="description sprite-global selectionSemaineBGB_png">
+						<span class="bleu1">Master Degree &bull; Me - Personal project</span>
+					</div>
+					<div class="titre sprite-global selectionSemaineBGT_png">
+						<span>// Interaction design</span>
+					</div>
+					<div class="brownBar"></div>
+				</a>
+			</li>
+			<li>
+				<a id="example1" href="http://2.im6.fr/0110009904289538-c2-photo-oYToxOntzOjE6InciO2k6MjcyO30%3D-call-of-duty-modern-warfare-3.jpg">
+					<img src="/assets/tablet.jpg" alt="" title="Tablet">
+					<div class="description sprite-global selectionSemaineBGB_png">
+						<span class="bleu1">Orange &bull; Tablet</span>
+					</div>
+					<div class="titre sprite-global selectionSemaineBGT_png">
+						<span>// Interaction design</span>
+					</div>
+					<div class="brownBar"></div>
+				</a>
+			</li>
+			<li>
+				<a id="example1" href="http://2.im6.fr/0110009904289538-c2-photo-oYToxOntzOjE6InciO2k6MjcyO30%3D-call-of-duty-modern-warfare-3.jpg">
+					<img src="/assets/Splash.jpg" alt="" title="Tablet">
+					<div class="description sprite-global selectionSemaineBGB_png">
+						<span class="bleu1">Playground &bull; Photo manipulation</span>
+					</div>
+					<div class="titre sprite-global selectionSemaineBGT_png">
+						<span>// Prints</span>
+					</div>
+					<div class="brownBar"></div>
+				</a>
+			</li>
+			<li>
+				<a id="example1" href="http://2.im6.fr/0110009904289538-c2-photo-oYToxOntzOjE6InciO2k6MjcyO30%3D-call-of-duty-modern-warfare-3.jpg">
+					<img src="/assets/MR.jpg" alt="" title="MR">
+					<div class="description sprite-global selectionSemaineBGB_png">
+						<span class="bleu1">Orange &bull; Innovation TV</span>
+					</div>
+					<div class="titre sprite-global selectionSemaineBGT_png">
+						<span>// Motion</span>
+					</div>
+					<div class="brownBar"></div>
+				</a>
+			</li>
+			<li>
+				<a id="example1" href="http://2.im6.fr/0110009904289538-c2-photo-oYToxOntzOjE6InciO2k6MjcyO30%3D-call-of-duty-modern-warfare-3.jpg">
+					<img src="/assets/3D_trees.jpg" alt="" title="3D Trees">
+					<div class="description sprite-global selectionSemaineBGB_png">
+						<span class="bleu1">Playground &bull; Mashup</span>
+					</div>
+					<div class="titre sprite-global selectionSemaineBGT_png">
+						<span>// 3D</span>
+					</div>
+					<div class="brownBar"></div>
+				</a>
+			</li>
+			<li>
+				<a id="example1" href="http://2.im6.fr/0110009904289538-c2-photo-oYToxOntzOjE6InciO2k6MjcyO30%3D-call-of-duty-modern-warfare-3.jpg">
+					<img src="/assets/Game.jpg" alt="" title="Game">
+					<div class="description sprite-global selectionSemaineBGB_png">
+						<span class="bleu1">Playground &bull; God of Rock</span>
+					</div>
+					<div class="titre sprite-global selectionSemaineBGT_png">
+						<span>// Video Games</span>
+					</div>
+					<div class="brownBar"></div>
+				</a>
+			</li>
+		</ul>
+	
+		<div class="contentEndingDots">
+			&bull;&bull;&bull;
+		</div>
+		<div class="copyrightContainer">
+			Chocochomp&nbsp;&bull;&nbsp;Copyright@07-11
+		</div>
+	</div>
+</div>
+
+
+				<div style="display:none">
+					<div id="data" class="chocoDiv">
+						<div class="chocoDivBL">
+							<div class="chocoDivBLText">
+								<h1>Resume</h1>
+								<p>
+									<span>Check my</span> <a href="mailto:jeremy.godefroid@gmail.com">LinkedIn</a><br>
+									<span>Download</span> <a href="mailto:jeremy.godefroid@gmail.com">PDF version</a>
+								</p>
+								
+								<h1>Contact</h1>
+								<p>
+									<a href="mailto:jeremy.godefroid@gmail.com">jeremy.godefroid@gmail.com</a>
+								</p>
+								
+								<h1>Position</h1>
+								<p>
+									<span>2008-Current:</span> UI and Visual Designer Orange Lab Tokyo,(Tokyo,Japan)<br><br>
+									<span>2006-2007:</span> UI and Visual Designer Emotic,(Nantes,France)<br><br>
+									<span>2004-2006:</span> Graphic Design & Visual Communication, Plokker,(Paris,France)
+								</p>
+							</div>
+						</div>
+
+						<div id="chocoDiv" class="chocoDivBR">
+							<div class="chocoDivBRText">
+								<h1>Worked for</h1>
+								<ul>
+									<li>+Orange Labs - France Telecom</li>
+									<li>+Samsung</li>
+									<li>+Plokker</li>
+									<li>+Emotic</li>
+									<li>+Delta</li>
+									<li>+Arte</li>
+								</ul>
+								<p>
+									&bull;&bull;&bull;
+								</p>
+								
+								<h1>Social Networks</h1>
+								<ul>
+									<li>+LinkedIn</li>
+									<li>+Facebook</li>
+									<li>+Mixi</li>
+									<li>+Vimeo</li>
+								</ul>
+							</div>
+							<div class="chocoDivBR-arrow-border"></div>
+							<div class="chocoDivBR-arrow"></div>
+							<div class="chocoButtons">
+								<div class="chocoButtonsIn">
+								</div>
+								<div class="chocoButtonsFb">
+								</div>
+								<div class="chocoButtonsM">
+								</div>
+								<div class="chocoButtonsV">
+								</div>
+							</div>
+						</div>
+
+						<div class="chocoDivTR">
+							<div class="chocoDivTRText">
+								<h1>About</h1>
+								<p>
+									I am Jeremy Godefroid, a French interaction and graphic designer, based in Tokyo, Japan
+									<br><br>
+									Lately, I have been elaborating Graphical User Interface desgins for high-tech products such as mobile devices and digital home applicances. But also producing 2D/3D motion graphics as well as designing ergonomics specifications and digital mockup prototypes.
+								</p>
+								
+								<h1>Education</h1>
+								<p>
+									2002/2007:L'ecole de design de Nantes Atlantique (France) Masters Degree/Bac+5, Interaction design (with Honors).
+									<br><br>
+									2005: Denmark Design Skole (Denmark). Digital Media Design/Exchange program.
+								</p>
+							</div>
+							<div class="chocoDivTR-arrow-border"></div>
+							<div class="chocoDivTR-arrow"></div>
+						</div>
+						
+
+						<div class="chocoDivTL">
+							<img src="images/profile.jpg" alt="" title="Jeremy">		
+						</div>
+						
+
+					</div>
+				</div>
+
+
+<%= link_to 'Edit', edit_portfolio_path(@portfolio) %> |
+<%= link_to 'Back', portfolios_path %>

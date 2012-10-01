@@ -1,0 +1,535 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"paddi",
+				"padding-top"
+			],
+			[
+				"url",
+				"urlencode"
+			],
+			[
+				"font",
+				"font	font-size: size"
+			],
+			[
+				"back",
+				"background	background-color: rgb"
+			],
+			[
+				"background",
+				"background	background-image: url"
+			],
+			[
+				"backgroun",
+				"background	background-color: name"
+			],
+			[
+				"backgro",
+				"background	background-position: position"
+			],
+			[
+				"padding",
+				"padding	padding-left: length"
+			],
+			[
+				"border",
+				"border	border-right-style: style"
+			],
+			[
+				"text",
+				"text	text-align: left/center/right"
+			],
+			[
+				"margin",
+				"margin	margin: all"
+			],
+			[
+				"tex",
+				"text	text-decoration: none/underline/overline/line-through/blink"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "app/views/portfolios/show.html.erb",
+			"settings":
+			{
+				"buffer_size": 12821,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/assets/stylesheets/application.css",
+			"settings":
+			{
+				"buffer_size": 579,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/controllers/portfolios_controller.rb",
+			"settings":
+			{
+				"buffer_size": 2121,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/models/gallery.rb",
+			"settings":
+			{
+				"buffer_size": 286,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/models/portfolio.rb",
+			"settings":
+			{
+				"buffer_size": 154,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "db/migrate/20120924132220_create_galleries.rb",
+			"settings":
+			{
+				"buffer_size": 301,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "db/migrate/20120924132234_create_arts.rb",
+			"settings":
+			{
+				"buffer_size": 257,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/bloodfire35-achat/Downloads/ChocoChomp/ChocoChomp.html",
+		"/Users/bloodfire35-achat/Dev/Chocochomp/choco/config/routes.rb",
+		"/Users/bloodfire35-achat/Downloads/ChocoChomp/ChocoChomp.css",
+		"/Users/bloodfire35-achat/Downloads/ChocoChomp/ChocoChompWhite.css",
+		"/Users/bloodfire35-achat/Downloads/ChocoChomp/jquery-1.5.min.js",
+		"/Users/bloodfire35-achat/Desktop/MeguSite/megusite/artmake.htm",
+		"/Users/bloodfire35-achat/Desktop/MeguSite/megusite/css/menu.css",
+		"/Users/bloodfire35-achat/Desktop/MeguSite/megusite/clinicarao.htm",
+		"/Users/bloodfire35-achat/Desktop/MeguSite/megusite/clinicrajeu.htm",
+		"/Users/bloodfire35-achat/Desktop/MeguSite/megusite/clinics.htm",
+		"/Users/bloodfire35-achat/Desktop/MeguSite/megusite/contact.htm",
+		"/Users/bloodfire35-achat/Desktop/MeguSite/megusite/exam.htm",
+		"/Users/bloodfire35-achat/Desktop/MeguSite/megusite/index.htm",
+		"/Users/bloodfire35-achat/Desktop/MeguSite/megusite/medicalart.htm",
+		"/Users/bloodfire35-achat/Desktop/MeguSite/megusite/pricing.htm",
+		"/Users/bloodfire35-achat/Desktop/MeguSite/megusite/profile.htm",
+		"/Users/bloodfire35-achat/Desktop/MeguSite/megusite/qa.htm",
+		"/Users/bloodfire35-achat/Desktop/MeguSite/megusite/sitemap.xml",
+		"/Users/bloodfire35-achat/Desktop/MeguSite/megusite/tejun.htm",
+		"/Users/bloodfire35-achat/Desktop/MeguSite/megusite/css/containers.css",
+		"/Users/bloodfire35-achat/Desktop/MeguSite/megusite/css/index.css",
+		"/Applications/imoten/logs/wrapper.log",
+		"/Users/bloodfire35-achat/Desktop/MeguSite/megusite/php/mail.php",
+		"/Users/bloodfire35-achat/Desktop/MeguSite/megusite/css/global.css",
+		"/Users/bloodfire35-achat/Desktop/MeguSite/megusite/result.htm",
+		"/Users/bloodfire35-achat/Desktop/MeguSite/megusite/css/exam.css",
+		"/Users/bloodfire35-achat/Desktop/MeguSite/megusite/css/clinicrajeu.css",
+		"/Users/bloodfire35-achat/Desktop/MeguSite/megusite/css/clinicarao.css",
+		"/Users/bloodfire35-achat/Desktop/MeguSite/megusite/css/artmake.css",
+		"/Users/bloodfire35-achat/Downloads/Slides 2/examples/images-with-captions/index.html",
+		"/Users/bloodfire35-achat/Downloads/FeaturedContentSlider/index.html",
+		"/Users/bloodfire35-achat/Downloads/FeaturedContentSlider/style.css",
+		"/Users/bloodfire35-achat/Desktop/MeguSite/megusite/css/contact.css",
+		"/Users/bloodfire35-achat/Desktop/MeguSite/megusite/css/profile.css",
+		"/Users/bloodfire35-achat/Desktop/MeguSite/megusite/css/pricing.css",
+		"/Users/bloodfire35-achat/Desktop/MeguSite/megusite/css/supersized.css",
+		"/Users/bloodfire35-achat/Desktop/MeguSite/megusite/theme/supersized.shutter.js",
+		"/Users/bloodfire35-achat/Desktop/MeguSite/megusite/theme/supersized.shutter.css",
+		"/Users/bloodfire35-achat/Desktop/MeguSite/megusite/javascript/supersized.3.2.7.js",
+		"/Users/bloodfire35-achat/Desktop/MeguSite/megusite/clinicArao.htm",
+		"/Users/bloodfire35-achat/Desktop/MeguSite/html/qa.htm",
+		"/Users/bloodfire35-achat/Desktop/MeguSite/html/pricing.htm",
+		"/Users/bloodfire35-achat/Desktop/MeguSite/html/medicalart.htm",
+		"/Users/bloodfire35-achat/Desktop/MeguSite/html/css/contact.css",
+		"/Users/bloodfire35-achat/Desktop/MeguSite/html/contact.htm",
+		"/Users/bloodfire35-achat/Desktop/MeguSite/html/css/tejun.css",
+		"/Users/bloodfire35-achat/Desktop/MeguSite/html/profile.htm",
+		"/Users/bloodfire35-achat/Desktop/MeguSite/html/css/profile.css",
+		"/Users/bloodfire35-achat/Desktop/MeguSite/html/tejun.htm",
+		"/Users/bloodfire35-achat/Desktop/MeguSite/html/css/pricing.css",
+		"/Users/bloodfire35-achat/Desktop/MeguSite/html/css/qa.css",
+		"/Users/bloodfire35-achat/Desktop/MeguSite/html/css/clinics.css",
+		"/Users/bloodfire35-achat/Desktop/MeguSite/html/css/medicalart.css",
+		"/Users/bloodfire35-achat/Desktop/MeguSite/html/index.htm",
+		"/Users/bloodfire35-achat/Desktop/MeguSite/html/css/index.css",
+		"/Users/bloodfire35-achat/Desktop/MeguSite/html/css/menu.css",
+		"/Users/bloodfire35-achat/Desktop/MeguSite/html/clinics.htm",
+		"/Users/bloodfire35-achat/Desktop/MeguSite/public_html/css/homepage.css",
+		"/Users/bloodfire35-achat/Desktop/MeguSite/public_html/profile.htm",
+		"/Users/bloodfire35-achat/Desktop/MeguSite/public_html/map.htm",
+		"/Users/bloodfire35-achat/Desktop/MeguSite/public_html/css/menu.css",
+		"/Users/bloodfire35-achat/Desktop/MeguSite/public_html/tejun.htm",
+		"/Users/bloodfire35-achat/Desktop/MeguSite/public_html/contact.htm",
+		"/Users/bloodfire35-achat/Desktop/MeguSite/public_html/homepage.htm",
+		"/Users/bloodfire35-achat/Downloads/art-megu.com/public_html/profile.htm"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			"/Users/bloodfire35-achat/Desktop/MeguSite/megusite"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"images\\",
+			"Images\\",
+			"images\\",
+			"mikael",
+			"parameter",
+			"　style=\"background-color:#DDD;\"",
+			"bgcolor:grey;",
+			"form",
+			"428",
+			"float",
+			"page-wrap",
+			"absolute",
+			"thumb_tray",
+			"\nthumb_tray\nthumb_tray",
+			"thumb_tray",
+			"thumbn",
+			"hide",
+			"menu",
+			"image_path",
+			"tray-button",
+			"tray",
+			"controls-wrapper",
+			"control-wrapper",
+			"demo-block",
+			"img/back.png",
+			"form",
+			"home"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"",
+			" style=\"background-color:#DDD;\"",
+			"background-color:#DDD;"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "app/views/portfolios/show.html.erb",
+					"settings":
+					{
+						"buffer_size": 12821,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								9354,
+								9354
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1137.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "app/assets/stylesheets/application.css",
+					"settings":
+					{
+						"buffer_size": 579,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								562,
+								562
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "app/controllers/portfolios_controller.rb",
+					"settings":
+					{
+						"buffer_size": 2121,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 514.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 3,
+					"file": "app/models/gallery.rb",
+					"settings":
+					{
+						"buffer_size": 286,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								114,
+								114
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "app/models/portfolio.rb",
+					"settings":
+					{
+						"buffer_size": 154,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								107,
+								107
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "db/migrate/20120924132220_create_galleries.rb",
+					"settings":
+					{
+						"buffer_size": 301,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								277,
+								277
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "db/migrate/20120924132234_create_arts.rb",
+					"settings":
+					{
+						"buffer_size": 257,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								235,
+								235
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.578867594401,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": false,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 285.0,
+	"status_bar_visible": true
+}
