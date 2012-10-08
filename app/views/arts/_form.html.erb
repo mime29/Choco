@@ -12,6 +12,9 @@
   <% end %>
 
   <div class="field">
+    <%= collection_select(:art, :gallery_id, Gallery.all, :id, :title) %>
+  </div>
+  <div class="field">
     <%= f.label :title %><br />
     <%= f.text_field :title %>
   </div>
@@ -21,7 +24,7 @@
   </div>
   <div class="field">
     <%= f.label :file %><br />
-    <%= f.text_field :file %>
+    <%= f.file_field :file %>
   </div>
   <div class="actions">
     <%= f.submit %>

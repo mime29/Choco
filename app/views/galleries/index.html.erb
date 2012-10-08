@@ -2,6 +2,7 @@
 
 <table>
   <tr>
+    <th>Portfolio</th>
     <th>Title</th>
     <th>Subtitle</th>
     <th>Likes</th>
@@ -13,12 +14,13 @@
 
 <% @galleries.each do |gallery| %>
   <tr>
+    <td><%= Portfolio.find(gallery.portfolio_id).title %></td>
     <td><%= gallery.title %></td>
     <td><%= gallery.subtitle %></td>
     <td><%= gallery.likes %></td>
     <td><%= gallery.thumbnail %></td>
     <td><%= link_to 'Show', gallery %></td>
-    <td><%= link_to 'Edit', edit_portfolio_gallery_path(gallery) %></td>
+    <td><%= link_to 'Edit', edit_gallery_path(gallery) %></td>
     <td><%= link_to 'Destroy', gallery, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
   </tr>
 <% end %>
@@ -26,4 +28,4 @@
 
 <br />
 
-<%= link_to 'New Gallery', new_portfolio_gallery_path %>
+<%= link_to 'New Gallery', new_gallery_path %>

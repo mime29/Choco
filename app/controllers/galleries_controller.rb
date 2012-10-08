@@ -40,6 +40,14 @@ class GalleriesController < ApplicationController
   # POST /galleries
   # POST /galleries.json
   def create
+
+    uploaded_io = params[:gallery][:thumbnail]
+    file_path = Rails.root.join('public', 'uploads', uploaded_io.original_filename)
+    File.open(file_path, 'w') do |file|
+      file.write(uploaded_io.read)
+    end
+
+    params[:gallery][:thumbnail] = file_path.to_s()
     @gallery = Gallery.new(params[:gallery])
 
     respond_to do |format|

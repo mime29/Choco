@@ -1,10 +1,10 @@
 Choco::Application.routes.draw do
 
-  resources :portfolios do
-    resources :galleries do
-      resources :arts
-    end
-  end
+  resources :portfolios
+
+  resources :galleries
+
+  resources :arts
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

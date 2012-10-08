@@ -1,6 +1,11 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <b>Portfolio:</b>
+  <%= @gallery.portfolio_id[:title]%>
+</p>
+
+<p>
   <b>Title:</b>
   <%= @gallery.title %>
 </p>
@@ -21,5 +26,5 @@
 </p>
 
 
-<%= link_to 'Edit', edit_portfolio_gallery_path(@gallery) %> |
-<%= link_to 'Back', portfolio_galleries_path %>
+<%= link_to 'Edit', edit_gallery_path(@gallery) %> |
+<%= link_to 'Back', galleries_path %>

@@ -2,6 +2,7 @@
 
 <table>
   <tr>
+    <th>Gallery</th>
     <th>Title</th>
     <th>Description</th>
     <th>File</th>
@@ -12,6 +13,7 @@
 
 <% @arts.each do |art| %>
   <tr>
+    <td><%= art.gallery_id %></td>
     <td><%= art.title %></td>
     <td><%= art.description %></td>
     <td><%= art.file %></td>
@@ -24,4 +26,4 @@
 
 <br />
 
-<%= link_to 'New Art', new_portfolio_gallery_art_path %>
+<%= link_to 'New Art', new_art_path %>

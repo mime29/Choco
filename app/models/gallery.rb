@@ -1,5 +1,5 @@
 class Gallery < ActiveRecord::Base
-  attr_accessible :likes, :subtitle, :thumbnail, :title
+  attr_accessible :likes, :subtitle, :thumbnail, :title, :portfolio_id
   belongs_to :portfolio
   has_many :arts, :dependent => :destroy
 
