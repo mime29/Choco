@@ -56,39 +56,39 @@
 	"buffers":
 	[
 		{
-			"file": "app/views/portfolios/show.html.erb",
+			"file": "/Users/bloodfire35-achat/Dev/Chocochomp/choco/app/views/galleries/new.html.erb",
 			"settings":
 			{
-				"buffer_size": 12821,
+				"buffer_size": 82,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "app/assets/stylesheets/application.css",
+			"file": "/Users/bloodfire35-achat/Dev/Chocochomp/choco/config/routes.rb",
 			"settings":
 			{
-				"buffer_size": 579,
+				"buffer_size": 1858,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "app/controllers/portfolios_controller.rb",
+			"file": "/Users/bloodfire35-achat/Dev/Chocochomp/choco/app/views/galleries/show.html.erb",
 			"settings":
 			{
-				"buffer_size": 2121,
+				"buffer_size": 408,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "app/models/gallery.rb",
+			"file": "/Users/bloodfire35-achat/Dev/Chocochomp/choco/app/controllers/galleries_controller.rb",
 			"settings":
 			{
-				"buffer_size": 286,
+				"buffer_size": 2316,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "app/models/portfolio.rb",
+			"file": "/Users/bloodfire35-achat/Dev/Chocochomp/choco/app/models/portfolio.rb",
 			"settings":
 			{
 				"buffer_size": 154,
@@ -96,7 +96,49 @@
 			}
 		},
 		{
-			"file": "db/migrate/20120924132220_create_galleries.rb",
+			"file": "/Users/bloodfire35-achat/Dev/Chocochomp/choco/app/views/galleries/edit.html.erb",
+			"settings":
+			{
+				"buffer_size": 120,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "Searching 267 files for \"galleries_path\"\n\n/Users/bloodfire35-achat/Dev/Chocochomp/choco/app/views/galleries/edit.html.erb:\n    4  \n    5  <%= link_to 'Show', @gallery %> |\n    6: <%= link_to 'Back', portfolio_galleries_path %>\n    7  \n\n/Users/bloodfire35-achat/Dev/Chocochomp/choco/app/views/galleries/show.html.erb:\n   23  \n   24  <%= link_to 'Edit', edit_portfolio_gallery_path(@gallery) %> |\n   25: <%= link_to 'Back', portfolio_galleries_path %>\n   26  \n\n/Users/bloodfire35-achat/Dev/Chocochomp/choco/test/functional/galleries_controller_test.rb:\n   45      end\n   46  \n   47:     assert_redirected_to galleries_path\n   48    end\n   49  end\n\n3 matches across 3 files\n",
+			"settings":
+			{
+				"buffer_size": 671,
+				"line_ending": "Unix",
+				"name": "Find Results",
+				"scratch": true
+			}
+		},
+		{
+			"file": "/Users/bloodfire35-achat/Dev/Chocochomp/choco/test/functional/galleries_controller_test.rb",
+			"settings":
+			{
+				"buffer_size": 1276,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/bloodfire35-achat/Dev/Chocochomp/choco/app/views/galleries/index.html.erb",
+			"settings":
+			{
+				"buffer_size": 747,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/bloodfire35-achat/Dev/Chocochomp/choco/app/views/galleries/_form.html.erb",
+			"settings":
+			{
+				"buffer_size": 923,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/bloodfire35-achat/Dev/Chocochomp/choco/app/models/gallery.rb",
 			"settings":
 			{
 				"buffer_size": 301,
@@ -104,10 +146,26 @@
 			}
 		},
 		{
-			"file": "db/migrate/20120924132234_create_arts.rb",
+			"file": "/Users/bloodfire35-achat/Dev/Chocochomp/choco/app/models/art.rb",
 			"settings":
 			{
-				"buffer_size": 257,
+				"buffer_size": 194,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/bloodfire35-achat/Dev/Chocochomp/choco/app/views/arts/_form.html.erb",
+			"settings":
+			{
+				"buffer_size": 792,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/bloodfire35-achat/Dev/Chocochomp/choco/app/views/arts/index.html.erb",
+			"settings":
+			{
+				"buffer_size": 610,
 				"line_ending": "Unix"
 			}
 		}
@@ -136,6 +194,21 @@
 	},
 	"file_history":
 	[
+		"/Users/bloodfire35-achat/Dev/Chocochomp/choco/app/views/portfolios/show.html.erb",
+		"/Users/bloodfire35-achat/Dev/Chocochomp/choco/app/assets/stylesheets/application.css",
+		"/Users/bloodfire35-achat/Dev/Chocochomp/choco/app/controllers/portfolios_controller.rb",
+		"/Users/bloodfire35-achat/Dev/Chocochomp/choco/app/views/arts/show.html.erb",
+		"/Users/bloodfire35-achat/Dev/Chocochomp/choco/app/views/galleries/show.html.erb",
+		"/Users/bloodfire35-achat/Dev/Chocochomp/choco/app/views/arts/new.html.erb",
+		"/Users/bloodfire35-achat/Dev/Chocochomp/choco/app/views/arts/index.html.erb",
+		"/Users/bloodfire35-achat/Dev/Chocochomp/choco/app/models/gallery.rb",
+		"/Users/bloodfire35-achat/Dev/Chocochomp/choco/app/models/portfolio.rb",
+		"/Users/bloodfire35-achat/Dev/Chocochomp/choco/db/migrate/20120924132234_create_arts.rb",
+		"/Users/bloodfire35-achat/Dev/Chocochomp/choco/app/views/portfolios/index.html.erb",
+		"/Users/bloodfire35-achat/Dev/Chocochomp/choco/app/views/galleries/index.html.erb",
+		"/Users/bloodfire35-achat/Dev/Chocochomp/choco/test/functional/galleries_controller_test.rb",
+		"/Users/bloodfire35-achat/Dev/Chocochomp/choco/app/views/galleries/new.html.erb",
+		"/Users/bloodfire35-achat/Dev/Chocochomp/choco/db/migrate/20120924132220_create_galleries.rb",
 		"/Users/bloodfire35-achat/Downloads/ChocoChomp/ChocoChomp.html",
 		"/Users/bloodfire35-achat/Dev/Chocochomp/choco/config/routes.rb",
 		"/Users/bloodfire35-achat/Downloads/ChocoChomp/ChocoChomp.css",
@@ -211,6 +284,7 @@
 		"height": 0.0,
 		"where_history":
 		[
+			"/Users/bloodfire35-achat/Dev/Chocochomp/choco",
 			"/Users/bloodfire35-achat/Desktop/MeguSite/megusite"
 		]
 	},
@@ -219,6 +293,10 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"port",
+			"galleries_path",
+			"new_gallery_path",
+			"new_galler",
 			"images\\",
 			"Images\\",
 			"images\\",
@@ -266,55 +344,28 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 2,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "app/views/portfolios/show.html.erb",
+					"file": "/Users/bloodfire35-achat/Dev/Chocochomp/choco/app/views/galleries/new.html.erb",
 					"settings":
 					{
-						"buffer_size": 12821,
+						"buffer_size": 82,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								9354,
-								9354
+								21,
+								21
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 1137.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "app/assets/stylesheets/application.css",
-					"settings":
-					{
-						"buffer_size": 579,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								562,
-								562
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/CSS/CSS.tmLanguage"
+							"syntax": "Packages/Rails/HTML (Rails).tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -323,19 +374,19 @@
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "app/controllers/portfolios_controller.rb",
+					"buffer": 1,
+					"file": "/Users/bloodfire35-achat/Dev/Chocochomp/choco/config/routes.rb",
 					"settings":
 					{
-						"buffer_size": 2121,
+						"buffer_size": 1858,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								101,
+								101
 							]
 						],
 						"settings":
@@ -345,36 +396,30 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 514.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
-				}
-			]
-		},
-		{
-			"selected": 0,
-			"sheets":
-			[
+				},
 				{
-					"buffer": 3,
-					"file": "app/models/gallery.rb",
+					"buffer": 2,
+					"file": "/Users/bloodfire35-achat/Dev/Chocochomp/choco/app/views/galleries/show.html.erb",
 					"settings":
 					{
-						"buffer_size": 286,
+						"buffer_size": 408,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								114,
-								114
+								93,
+								85
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Ruby/Ruby.tmLanguage"
+							"syntax": "Packages/Rails/HTML (Rails).tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -383,8 +428,42 @@
 					"type": "text"
 				},
 				{
+					"buffer": 3,
+					"file": "/Users/bloodfire35-achat/Dev/Chocochomp/choco/app/controllers/galleries_controller.rb",
+					"settings":
+					{
+						"buffer_size": 2316,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1151,
+								1151
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 37.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 4,
+			"sheets":
+			[
+				{
 					"buffer": 4,
-					"file": "app/models/portfolio.rb",
+					"file": "/Users/bloodfire35-achat/Dev/Chocochomp/choco/app/models/portfolio.rb",
 					"settings":
 					{
 						"buffer_size": 154,
@@ -394,8 +473,8 @@
 						"selection":
 						[
 							[
-								107,
-								107
+								0,
+								0
 							]
 						],
 						"settings":
@@ -410,18 +489,95 @@
 				},
 				{
 					"buffer": 5,
-					"file": "db/migrate/20120924132220_create_galleries.rb",
+					"file": "/Users/bloodfire35-achat/Dev/Chocochomp/choco/app/views/galleries/edit.html.erb",
 					"settings":
 					{
-						"buffer_size": 301,
+						"buffer_size": 120,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								277,
-								277
+								25,
+								25
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/HTML (Rails).tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"settings":
+					{
+						"buffer_size": 671,
+						"regions":
+						{
+							"match":
+							{
+								"flags": 112,
+								"regions":
+								[
+									[
+										209,
+										223
+									],
+									[
+										432,
+										446
+									],
+									[
+										606,
+										620
+									]
+								],
+								"scope": ""
+							}
+						},
+						"selection":
+						[
+							[
+								613,
+								613
+							]
+						],
+						"settings":
+						{
+							"detect_indentation": false,
+							"output_tag": 1,
+							"result_base_dir": "",
+							"result_file_regex": "^([A-Za-z\\\\/<].*):$",
+							"result_line_regex": "^ +([0-9]+):",
+							"scroll_past_end": true,
+							"syntax": "Packages/Default/Find Results.hidden-tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "/Users/bloodfire35-achat/Dev/Chocochomp/choco/test/functional/galleries_controller_test.rb",
+					"settings":
+					{
+						"buffer_size": 1276,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1251,
+								1251
 							]
 						],
 						"settings":
@@ -437,24 +593,160 @@
 					"type": "text"
 				},
 				{
-					"buffer": 6,
-					"file": "db/migrate/20120924132234_create_arts.rb",
+					"buffer": 8,
+					"file": "/Users/bloodfire35-achat/Dev/Chocochomp/choco/app/views/galleries/index.html.erb",
 					"settings":
 					{
-						"buffer_size": 257,
+						"buffer_size": 747,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								235,
-								235
+								296,
+								296
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "/Users/bloodfire35-achat/Dev/Chocochomp/choco/app/views/galleries/_form.html.erb",
+					"settings":
+					{
+						"buffer_size": 923,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								826,
+								836
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "/Users/bloodfire35-achat/Dev/Chocochomp/choco/app/models/gallery.rb",
+					"settings":
+					{
+						"buffer_size": 301,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								105,
+								105
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "/Users/bloodfire35-achat/Dev/Chocochomp/choco/app/models/art.rb",
+					"settings":
+					{
+						"buffer_size": 194,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								89,
+								89
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 12,
+					"file": "/Users/bloodfire35-achat/Dev/Chocochomp/choco/app/views/arts/_form.html.erb",
+					"settings":
+					{
+						"buffer_size": 792,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								577,
+								577
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 13,
+					"file": "/Users/bloodfire35-achat/Dev/Chocochomp/choco/app/views/arts/index.html.erb",
+					"settings":
+					{
+						"buffer_size": 610,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								148,
+								148
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
@@ -495,7 +787,7 @@
 		"cols":
 		[
 			0.0,
-			0.578867594401,
+			0.5,
 			1.0
 		],
 		"rows":
@@ -530,6 +822,6 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 285.0,
+	"side_bar_width": 234.0,
 	"status_bar_visible": true
 }

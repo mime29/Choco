@@ -38,51 +38,33 @@
 				});
 				/*createCookie('style', styleName, 365);*/
 			}
-	
-		
-			$("#gyukaku").click(function() {
-				$.fancybox([
-					'/assets/gyukaku/01.jpg',
-					'/assets/gyukaku/02.jpg',
-					{
-						'href'	: '/assets/gyukaku/03.jpg',
-						'title'	: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit'
-					},
-					'/assets/gyukaku/04.jpg',
-					'/assets/gyukaku/05.jpg',
-					'/assets/gyukaku/06.jpg'
-				], {
-					'padding'			: 10,
-					'transitionIn'		: 'none',
-					'transitionOut'		: 'none',
-					'type'              : 'image',
-					'changeFade'        : 150,
-					'titlePosition'  : 'over'
-				});
-			});
 			
+			<% Gallery.find(:all, :conditions=>['portfolio_id=?', @portfolio.id]).each do |gallery| %>
+				
+				$("#<%= ('gal' << gallery.id) %>").click(function() {
+					$.fancybox([
+						<% Art.find(:all, :conditions=>['gallery_id=?', gallery.id]).each do |art| %>
+						'<%= art.file %>',
+						{
+							'href' : '<%= art.file %>',
+							'title': '<%= art.title %>'
+						},
+						<% end %>
+						], {
+						'padding'			: 10,
+						'transitionIn'		: 'none',
+						'transitionOut'		: 'none',
+						'type'              : 'image',
+						'changeFade'        : 150,
+						'titlePosition'  : 'over'
+					});
+				});
+			
+			<% end %>
 		
      	});
 		
    </script>
-
-
-
-
-<p id="notice"><%= notice %></p>
-
-<p>
-  <b>Title:</b>
-  <%= @portfolio.title %>
-</p>
-
-<% @portfolio.galleries.each do |gallerie| %>
-  <p>
-    test
-  </p>
-  <% @gallerie.arts.each do |art| %>
-  <% end %>
-<% end %>
 
 
 
@@ -111,181 +93,27 @@
 				</a>
 				
 			</li>
+			<% Gallery.find(:all, :conditions=>['portfolio_id=?', @portfolio.id]).each do |gallery| %>
 				<li>
-				<a  id="gyukaku" href="javascript:;" title="Gyukaku">
-					<img src="/assets/gyukaku.jpg" alt="" title="gyukaku">
-					<div class="description sprite-global selectionSemaineBGB_png">
-						<span class="bleu1">Gyukaku &bull; Poster for a Japanese restaurant</span>
-					</div>
-					<div class="titre sprite-global selectionSemaineBGT_png">
-						<span>// Prints</span>
-					</div>
-					<div class="brownBar"></div>
-				</a>
-			</li>
-				<li>
-				<a  id="wired" href="javascript:;" title="Wired">
-					<img src="/assets/Wired.jpg" alt="" title="Wired Cafe">
-					<div class="description sprite-global selectionSemaineBGB_png">
-						<span class="bleu1">Wired Cafe &bull; Poster for a Japanese bar</span>
-					</div>
-					<div class="titre sprite-global selectionSemaineBGT_png">
-						<span>// Prints</span>
-					</div>
-					<div class="brownBar"></div>
-				</a>
-			</li>
-			<li>
-				<a  id="vexels" href="javascript:;" title="Vexels">
-					<img src="Vexels.jpg" alt="" title="Vexels">
-					<div class="description sprite-global selectionSemaineBGB_png">
-						<span class="bleu1">Portrait &bull; Vexel Playground</span>
-					</div>
-					<div class="titre sprite-global selectionSemaineBGT_png">
-						<span>// Prints</span>
-					</div>
-					<div class="brownBar"></div>
-				</a>
-			</li>
-			<li>
-				<a  id="example1" href="http://2.im6.fr/-31772-photo-crop-pa7d97a8a75838789af108340ca964e1e-emissions-reportages-selection-avril.jpg?options=eNoryywqKU3N0TU2NDc3AgAitAQ9&amp;width=272&amp;height=153" title="Selection de la Rédac : avril 2011 avec Portal 2, Outland et Virtua Tennis 4">
-					<img src="/assets/Self.jpg" alt="" title="Self">
-					<div class="description sprite-global selectionSemaineBGB_png">
-						<span class="bleu1">Self-Portrait &bull; Photo manipulation</span>
-					</div>
-					<div class="titre sprite-global selectionSemaineBGT_png">
-						<span>// Prints</span>
-					</div>
-					<div class="brownBar"></div>
-				</a>
-			</li>
-			<li>
-				<a id="example1" href="http://2.im6.fr/0110009904289538-c2-photo-oYToxOntzOjE6InciO2k6MjcyO30%3D-call-of-duty-modern-warfare-3.jpg">
-					<img src="/assets/ebook_web.jpg" alt="" title="eBook">
-					<div class="description sprite-global selectionSemaineBGB_png">
-						<span class="bleu1">Orange &bull; Print & go platform</span>
-					</div>
-					<div class="titre sprite-global selectionSemaineBGT_png">
-						<span>// Web design</span>
-					</div>
-					<div class="brownBar"></div>
-				</a>
-			</li>
-			<li>
-				<a id="portfolio" href="javascript:;">
-					<img src="/assets/choco_web.jpg" alt="" title="Portfolios">
-					<div class="description sprite-global selectionSemaineBGB_png">
-						<span class="bleu1">Chocochomp &bull; Portfolios</span>
-					</div>
-					<div class="titre sprite-global selectionSemaineBGT_png">
-						<span>// Web design</span>
-					</div>
-					<div class="brownBar"></div>
-				</a>
-			</li>
-			<li>
-				<a id="example1" href="http://2.im6.fr/0110009904289538-c2-photo-oYToxOntzOjE6InciO2k6MjcyO30%3D-call-of-duty-modern-warfare-3.jpg">
-					<img src="/assets/MR_concept.jpg" alt="" title="MR concept">
-					<div class="description sprite-global selectionSemaineBGB_png">
-						<span class="bleu1">Orange &bull; Mixed Reality concepts</span>
-					</div>
-					<div class="titre sprite-global selectionSemaineBGT_png">
-						<span>// Interaction design</span>
-					</div>
-					<div class="brownBar"></div>
-				</a>
-			</li>
-			<li>
-				<a id="example1" href="http://2.im6.fr/0110009904289538-c2-photo-oYToxOntzOjE6InciO2k6MjcyO30%3D-call-of-duty-modern-warfare-3.jpg">
-					<img src="/assets/e-book.jpg" alt="" title="eBook">
-					<div class="description sprite-global selectionSemaineBGB_png">
-						<span class="bleu1">Orange &bull; eBook interfaces</span>
-					</div>
-					<div class="titre sprite-global selectionSemaineBGT_png">
-						<span>// Interaction design</span>
-					</div>
-					<div class="brownBar"></div>
-				</a>
-			</li>
-			<li>
-				<a id="example1" href="http://2.im6.fr/0110009904289538-c2-photo-oYToxOntzOjE6InciO2k6MjcyO30%3D-call-of-duty-modern-warfare-3.jpg">
-					<img src="/assets/Me.jpg" alt="" title="Me">
-					<div class="description sprite-global selectionSemaineBGB_png">
-						<span class="bleu1">Master Degree &bull; Me - Personal project</span>
-					</div>
-					<div class="titre sprite-global selectionSemaineBGT_png">
-						<span>// Interaction design</span>
-					</div>
-					<div class="brownBar"></div>
-				</a>
-			</li>
-			<li>
-				<a id="example1" href="http://2.im6.fr/0110009904289538-c2-photo-oYToxOntzOjE6InciO2k6MjcyO30%3D-call-of-duty-modern-warfare-3.jpg">
-					<img src="/assets/tablet.jpg" alt="" title="Tablet">
-					<div class="description sprite-global selectionSemaineBGB_png">
-						<span class="bleu1">Orange &bull; Tablet</span>
-					</div>
-					<div class="titre sprite-global selectionSemaineBGT_png">
-						<span>// Interaction design</span>
-					</div>
-					<div class="brownBar"></div>
-				</a>
-			</li>
-			<li>
-				<a id="example1" href="http://2.im6.fr/0110009904289538-c2-photo-oYToxOntzOjE6InciO2k6MjcyO30%3D-call-of-duty-modern-warfare-3.jpg">
-					<img src="/assets/Splash.jpg" alt="" title="Tablet">
-					<div class="description sprite-global selectionSemaineBGB_png">
-						<span class="bleu1">Playground &bull; Photo manipulation</span>
-					</div>
-					<div class="titre sprite-global selectionSemaineBGT_png">
-						<span>// Prints</span>
-					</div>
-					<div class="brownBar"></div>
-				</a>
-			</li>
-			<li>
-				<a id="example1" href="http://2.im6.fr/0110009904289538-c2-photo-oYToxOntzOjE6InciO2k6MjcyO30%3D-call-of-duty-modern-warfare-3.jpg">
-					<img src="/assets/MR.jpg" alt="" title="MR">
-					<div class="description sprite-global selectionSemaineBGB_png">
-						<span class="bleu1">Orange &bull; Innovation TV</span>
-					</div>
-					<div class="titre sprite-global selectionSemaineBGT_png">
-						<span>// Motion</span>
-					</div>
-					<div class="brownBar"></div>
-				</a>
-			</li>
-			<li>
-				<a id="example1" href="http://2.im6.fr/0110009904289538-c2-photo-oYToxOntzOjE6InciO2k6MjcyO30%3D-call-of-duty-modern-warfare-3.jpg">
-					<img src="/assets/3D_trees.jpg" alt="" title="3D Trees">
-					<div class="description sprite-global selectionSemaineBGB_png">
-						<span class="bleu1">Playground &bull; Mashup</span>
-					</div>
-					<div class="titre sprite-global selectionSemaineBGT_png">
-						<span>// 3D</span>
-					</div>
-					<div class="brownBar"></div>
-				</a>
-			</li>
-			<li>
-				<a id="example1" href="http://2.im6.fr/0110009904289538-c2-photo-oYToxOntzOjE6InciO2k6MjcyO30%3D-call-of-duty-modern-warfare-3.jpg">
-					<img src="/assets/Game.jpg" alt="" title="Game">
-					<div class="description sprite-global selectionSemaineBGB_png">
-						<span class="bleu1">Playground &bull; God of Rock</span>
-					</div>
-					<div class="titre sprite-global selectionSemaineBGT_png">
-						<span>// Video Games</span>
-					</div>
-					<div class="brownBar"></div>
-				</a>
-			</li>
+					<a  id="<%= 'gal' << gallery.id %>" href="javascript:;" title="<%= gallery.title %>">
+						<img src="<%= gallery.thumbnail %>" alt="" title="<%= gallery.title %>">
+						<div class="description sprite-global selectionSemaineBGB_png">
+							<span class="bleu1"><%= gallery.subtitle %></span>
+						</div>
+						<div class="titre sprite-global selectionSemaineBGT_png">
+							<span>// Prints</span>
+						</div>
+						<div class="brownBar"></div>
+					</a>
+				</li>
+			<% end %> 
 		</ul>
 	
 		<div class="contentEndingDots">
 			&bull;&bull;&bull;
 		</div>
 		<div class="copyrightContainer">
-			Chocochomp&nbsp;&bull;&nbsp;Copyright@07-11
+			Chocochomp&nbsp;&bull;&nbsp;Copyright@07-13
 		</div>
 	</div>
 </div>
@@ -374,7 +202,7 @@
 						
 
 						<div class="chocoDivTL">
-							<img src="images/profile.jpg" alt="" title="Jeremy">		
+							<img src="/assets/profile.jpg" alt="" title="Jeremy">		
 						</div>
 						
 
@@ -382,5 +210,5 @@
 				</div>
 
 
-<%= link_to 'Edit', edit_portfolio_path(@portfolio) %> |
-<%= link_to 'Back', portfolios_path %>
+<% link_to 'Edit', edit_portfolio_path(@portfolio) %> 
+<% link_to 'Back', portfolios_path %>

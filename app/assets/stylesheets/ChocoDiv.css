@@ -1,0 +1,270 @@
+.chocoDiv{
+	/*position:absolute;
+	left:50%;
+	top:20px;
+	margin-left:-350px;*/
+	width:548px;
+	height:724px;
+	/*border-style:solid;
+	border-width:1px;
+	border-color:#FF0000;*/
+}
+
+.chocoDivTL{
+	position:absolute;
+	left:0px;
+	top:0px;
+	border:1px solid #000000;
+	border-right: 0px solid #000000;
+	margin:0px;
+	padding:0px;
+	width:273px;
+	height:360px;
+}
+
+.chocoDivTL img{
+	margin:0px;
+	padding:0px;
+	border:0px;
+	width:273px;
+	height:360px;
+}
+
+.chocoDivTR{
+	position:absolute;
+	right:0px;
+	top:0px;
+	background: -moz-linear-gradient(100% 100% 90deg, #56473a, #7f6f61);
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#7f6f61), to(#56473a));
+	border:1px solid #000000;
+	margin:0px;
+	padding:0px;
+	width:272px;
+	height:360px;
+	/*-moz-box-shadow:0 2px 3px #888888;
+	-webkit-box-shadow:0 2px 3px #888888;*/
+}
+
+.chocoDivTR-arrow {
+	border-color: #56473a transparent transparent transparent;
+	border-style: solid;
+	border-width: 25px;
+	height:0;
+	width:0;
+	position:absolute;
+	bottom:-49px;
+	left:124px;
+}
+
+.chocoDivTR-arrow-border {
+	border-color: #000000 transparent transparent transparent;
+	border-style: solid;
+	border-width: 25px;
+	height:0;
+	width:0;
+	position:absolute;
+	bottom:-50px;
+	left:124px;
+}
+
+.chocoDivTRText{
+	position:absolute;
+	left:10px;
+	top:10px;
+	padding:0px;
+	margin:0px;
+}
+.chocoDivTR h1{
+	font-family: Arial;
+	font-size:1em;
+	color:#CCCCCC;
+	text-transform:capitalize;
+}
+.chocoDivTR p{
+	font-family: Arial;
+	font-size:0.8em;
+	color:#000000;
+}
+.chocoDivTR span{
+	font-family: Arial;
+	font-size:1em;
+	color:#DDDDDD;
+}
+.chocoDivTR a{
+	font-family: Arial;
+	font-size:1em;
+	color:#DDDDDD;
+	text-decoration:none;
+}
+
+
+.chocoDivBL{
+	position:absolute;
+	left:0px;
+	bottom:0px;
+	background: -moz-linear-gradient(100% 100% 90deg, #bbbbbb, #e7e7e7);
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#e7e7e7), to(#bbbbbb));
+	border:0px solid #666666;
+	margin:0px;
+	padding:0px;
+	width:274px;
+	height:362px;
+}
+
+.chocoDivBLText{
+	position:absolute;
+	left:10px;
+	top:10px;
+	padding:0px;
+	margin:0px;
+}
+.chocoDivBL h1{
+	font-family: Arial;
+	font-size:1em;
+	color:#555555;
+	text-transform:capitalize;
+}
+.chocoDivBL p{
+	font-family: Arial;
+	font-size:0.8em;
+	color:#999999;
+}
+.chocoDivBL span{
+	font-family: Arial;
+	font-size:1em;
+	color:#666666;
+}
+.chocoDivBL a{
+	font-family: Arial;
+	font-size:1em;
+	color:#999999;
+	text-decoration:none;
+}
+
+.chocoDivBR{
+	position:absolute;
+	right:0px;
+	bottom:0px;
+	background: -moz-linear-gradient(100% 100% 90deg, #ff6804, #ffaa66);
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ffaa66), to(#ff6804));
+	border:1px solid #BB6600;
+	margin:0px;
+	padding:0px;
+	width:272px;
+	height:360px;
+	/*-moz-box-shadow:-2px 0 3px #888888;
+	-webkit-box-shadow:-2px 0 3px #888888;*/
+}
+
+.chocoDivBR-arrow {
+	border-color: transparent #ff8a36 transparent transparent;
+	border-style: solid;
+	border-width: 25px;
+	height:0;
+	width:0;
+	position:absolute;
+	bottom:168px;
+	left:-48px;
+}
+
+.chocoDivBR-arrow-border {
+	border-color: transparent #BB6600 transparent transparent;
+	border-style: solid;
+	border-width: 25px;
+	height:0;
+	width:0;
+	position:absolute;
+	bottom:168px;
+	left:-50px;
+}
+
+.chocoDivBRText{
+	position:absolute;
+	left:10px;
+	top:10px;
+	padding:0px;
+	margin:0px;
+}
+.chocoDivBR h1{
+	font-family: Arial;
+	font-size:1em;
+	color:#000000;
+	text-transform:capitalize;
+	line-height:90%
+}
+
+.chocoDivBR p{
+	font-family: Arial;
+	font-size:0.8em;
+	color:#FFFFFF;
+}
+
+.chocoDivBR ul{
+	padding:0px;
+	list-style:none;
+}
+
+.chocoDivBR ul li{
+	font-family: Arial;
+	font-size:0.8em;
+	color:#FFFFFF;
+	padding:0px;
+	margin:0px;
+	left:0px;
+}
+.chocoDivBR span{
+	font-family: Arial;
+	font-size:1em;
+	color:#CCCCCC;
+}
+.chocoDivBR a{
+	font-family: Arial;
+	font-size:1em;
+	color:#FFFFFF;
+	text-decoration:none;
+}
+
+.chocoButtons{
+	position:absolute;
+	bottom:15px;
+	left:10px;
+	height:40px;
+}
+
+.chocoButtonsIn{
+	position:relative;
+	float:left;
+	height:50px;
+	width:50px;
+	margin-right:8px;
+	background-image:url('/assets/linkedin.png');
+}
+
+.chocoButtonsFb{
+	position:relative;
+	float:left;
+	height:50px;
+	width:50px;
+	margin-right:8px;
+	background-image:url('/assets/facebook.png');
+
+}
+
+.chocoButtonsM{
+	position:relative;
+	float:left;
+	height:50px;
+	width:50px;
+	margin-right:8px;
+	background-image:url('/assets/mixi.png');
+
+}
+
+.chocoButtonsV{
+	position:relative;
+	float:left;
+	height:50px;
+	width:50px;
+	background-image:url('/assets/vimeo.png');
+
+}

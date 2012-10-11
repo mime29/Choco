@@ -13,7 +13,7 @@
 
 <% @arts.each do |art| %>
   <tr>
-    <td><%= art.gallery_id %></td>
+    <td><%= Gallery.find(art.gallery_id).title%></td>
     <td><%= art.title %></td>
     <td><%= art.description %></td>
     <td><%= art.file %></td>
