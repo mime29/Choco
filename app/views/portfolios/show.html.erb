@@ -38,17 +38,16 @@
 				});
 				/*createCookie('style', styleName, 365);*/
 			}
-			
-			<% Gallery.find(:all, :conditions=>['portfolio_id=?', @portfolio.id]).each do |gallery| %>
-				
-				$("#<%= ('gal' << gallery.id) %>").click(function() {
+			<% Gallery.find(:all, :conditions=>['portfolio_id=?', @portfolio.id]).each_with_index do |gallery, index| %>
+				$("#<%= 'gal' %><%= index %>").click(function() {
 					$.fancybox([
-						<% Art.find(:all, :conditions=>['gallery_id=?', gallery.id]).each do |art| %>
-						'<%= art.file %>',
+						<% arts = Art.find(:all, :conditions=>['gallery_id=?', gallery.id]) %>
+						<% arts.each_with_index do |art, art_index| %>
 						{
 							'href' : '<%= art.file %>',
 							'title': '<%= art.title %>'
-						},
+						}
+						<% if(arts.size > art_index+1) %>,<% end %>
 						<% end %>
 						], {
 						'padding'			: 10,
@@ -61,6 +60,8 @@
 				});
 			
 			<% end %>
+
+
 		
      	});
 		
@@ -93,10 +94,11 @@
 				</a>
 				
 			</li>
-			<% Gallery.find(:all, :conditions=>['portfolio_id=?', @portfolio.id]).each do |gallery| %>
-				<li>
-					<a  id="<%= 'gal' << gallery.id %>" href="javascript:;" title="<%= gallery.title %>">
-						<img src="<%= gallery.thumbnail %>" alt="" title="<%= gallery.title %>">
+			<% i = 0 %>
+			<% Gallery.find(:all, :conditions=>['portfolio_id=?', @portfolio.id]).each_with_index do |gallery, index| %>
+				<li><% i = i+1 %>
+					<a  id="<%= 'gal' %><%= index %>" href="javascript:;" title="<%= gallery.title %>">
+						<img src="<%= gallery.thumbnail %>" alt=" " title="<%= gallery.title %>">
 						<div class="description sprite-global selectionSemaineBGB_png">
 							<span class="bleu1"><%= gallery.subtitle %></span>
 						</div>
@@ -105,8 +107,10 @@
 						</div>
 						<div class="brownBar"></div>
 					</a>
+
 				</li>
 			<% end %> 
+
 		</ul>
 	
 		<div class="contentEndingDots">
