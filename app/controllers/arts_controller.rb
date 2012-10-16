@@ -42,12 +42,12 @@ class ArtsController < ApplicationController
   def create
 
     uploaded_io = params[:art][:file]
-    file_path = Rails.root.join('app', 'assets', 'images', 'arts', uploaded_io.original_filename)
+    file_path = Rails.root.join('public', 'images', 'arts', uploaded_io.original_filename)
     File.open(file_path, 'w') do |file|
       file.write(uploaded_io.read)
     end
 
-    params[:art][:file] = '/assets' << '/arts/' << uploaded_io.original_filename
+    params[:art][:file] = '/images' << '/arts/' << uploaded_io.original_filename
     @art = Art.new(params[:art])
 
     respond_to do |format|
