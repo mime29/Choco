@@ -42,7 +42,7 @@ class GalleriesController < ApplicationController
   def create
 
     uploaded_io = params[:gallery][:thumbnail]
-    file_path = Rails.root.join('public', 'images', 'thumbnails', uploaded_io.original_filename)
+    file_path = Rails.root.join('../public', 'images', 'thumbnails', uploaded_io.original_filename)
     File.open(file_path, 'w') do |file|
       file.write(uploaded_io.read)
     end
