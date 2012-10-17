@@ -1,32 +1,32 @@
-<%= form_for(@art) do |f| %>
-  <% if @art.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@art.errors.count, "error") %> prohibited this art from being saved:</h2>
-
-      <ul>
-      <% @art.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+<%= form_for @art, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :title, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :title, :class => 'text_field' %>
     </div>
-  <% end %>
+  </div>
+  <div class="control-group">
+    <%= f.label :description, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :description, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :file, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :file, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :gallery_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= collection_select(:art, :gallery_id, Gallery.all, :id, :title) %>
+    </div>
+  </div>
 
-  <div class="field">
-    <%= collection_select(:art, :gallery_id, Gallery.all, :id, :title) %>
-  </div>
-  <div class="field">
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br />
-    <%= f.text_field :description %>
-  </div>
-  <div class="field">
-    <%= f.label :file %><br />
-    <%= f.file_field :file %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                arts_path, :class => 'btn' %>
   </div>
 <% end %>

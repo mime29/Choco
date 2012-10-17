@@ -1,31 +1,44 @@
-<h1>Listing galleries</h1>
-
-<table>
-  <tr>
-    <th>Portfolio</th>
-    <th>Title</th>
-    <th>Subtitle</th>
-    <th>Likes</th>
-    <th>Thumbnail</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @galleries.each do |gallery| %>
-  <tr>
-    <td><%= Portfolio.find(gallery.portfolio_id).title %></td>
-    <td><%= gallery.title %></td>
-    <td><%= gallery.subtitle %></td>
-    <td><%= gallery.likes %></td>
-    <td><%= gallery.thumbnail %></td>
-    <td><%= link_to 'Show', gallery %></td>
-    <td><%= link_to 'Edit', edit_gallery_path(gallery) %></td>
-    <td><%= link_to 'Destroy', gallery, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
-  </tr>
-<% end %>
+<%- model_class = Gallery -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:title) %></th>
+      <th><%= model_class.human_attribute_name(:subtitle) %></th>
+      <th><%= model_class.human_attribute_name(:likes) %></th>
+      <th><%= model_class.human_attribute_name(:thumbnail) %></th>
+      <th><%= model_class.human_attribute_name(:portfolio_id) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @galleries.each do |gallery| %>
+      <tr>
+        <td><%= link_to gallery.id, gallery_path(gallery) %></td>
+        <td><%= gallery.title %></td>
+        <td><%= gallery.subtitle %></td>
+        <td><%= gallery.likes %></td>
+        <td><%= gallery.thumbnail %></td>
+        <td><%= gallery.portfolio_id %></td>
+        <td><%=l gallery.created_at %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_gallery_path(gallery), :class => 'btn btn-mini' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      gallery_path(gallery),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>
 
-<br />
-
-<%= link_to 'New Gallery', new_gallery_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_gallery_path,
+            :class => 'btn btn-primary' %>

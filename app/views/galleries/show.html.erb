@@ -1,30 +1,29 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Gallery -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human %></h1>
+</div>
 
-<p>
-  <b>Portfolio:</b>
-  <%= @gallery.portfolio_id[:title]%>
-</p>
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:title) %>:</strong></dt>
+  <dd><%= @gallery.title %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:subtitle) %>:</strong></dt>
+  <dd><%= @gallery.subtitle %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:likes) %>:</strong></dt>
+  <dd><%= @gallery.likes %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:thumbnail) %>:</strong></dt>
+  <dd><%= @gallery.thumbnail %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:portfolio_id) %>:</strong></dt>
+  <dd><%= @gallery.portfolio_id %></dd>
+</dl>
 
-<p>
-  <b>Title:</b>
-  <%= @gallery.title %>
-</p>
-
-<p>
-  <b>Subtitle:</b>
-  <%= @gallery.subtitle %>
-</p>
-
-<p>
-  <b>Likes:</b>
-  <%= @gallery.likes %>
-</p>
-
-<p>
-  <b>Thumbnail:</b>
-  <%= @gallery.thumbnail %>
-</p>
-
-
-<%= link_to 'Edit', edit_gallery_path(@gallery) %> |
-<%= link_to 'Back', galleries_path %>
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              galleries_path, :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_gallery_path(@gallery), :class => 'btn' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              gallery_path(@gallery),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
