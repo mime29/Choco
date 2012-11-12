@@ -47,7 +47,7 @@ class GalleriesController < ApplicationController
 
     uploaded_io = params[:gallery][:thumbnail]
     filename = sanitize_filename(uploaded_io.original_filename)
-    AWS::S3::S3Object.store(filename, fileUp['datafile'].read, @@BUCKET, :access => :public_read)
+    AWS::S3::S3Object.store(filename, uploaded_io.read, @@BUCKET, :access => :public_read)
     url = AWS::S3::S3Object.url_for(filename, @@BUCKET, :authenticated => false)
     
     params[:gallery][:thumbnail] = url
@@ -94,12 +94,11 @@ class GalleriesController < ApplicationController
       format.json { head :no_content }
     end
   end
-end
 
-private
   def sanitize_filename(file_name)
     just_filename = File.basename(file_name)
     just_filename.sub(/[^\w\.\-]/,'_')
   end
 end
+
 
