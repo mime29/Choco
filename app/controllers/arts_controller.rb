@@ -1,4 +1,7 @@
 class ArtsController < ApplicationController
+
+  @@BUCKET = "chocochomp"
+  
   # GET /arts
   # GET /arts.json
   def index
@@ -88,7 +91,7 @@ class ArtsController < ApplicationController
       format.json { head :no_content }
     end
   end
-  
+
   def sanitize_filename(file_name)
     just_filename = File.basename(file_name)
     just_filename.sub(/[^\w\.\-]/,'_')
