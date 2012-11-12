@@ -40,16 +40,16 @@ class ArtsController < ApplicationController
   # POST /arts
   # POST /arts.json
   def create
+  ## S3
 
     uploaded_io = params[:art][:file]
-    file_path = Rails.root.join('public', 'images', 'arts', uploaded_io.original_filename)
-    File.open(file_path, 'w') do |file|
-      file.write(uploaded_io.read)
-    end
-
-    params[:art][:file] = '/images' << '/arts/' << uploaded_io.original_filename
+    filename = sanitize_filename(uploaded_io.original_filename)
+    AWS::S3::S3Object.store(filename, uploaded_io.read, @@BUCKET, :access => :public_read)
+    url = AWS::S3::S3Object.url_for(filename, @@BUCKET, :authenticated => false)
+    
+    params[:art][:file] = url
     @art = Art.new(params[:art])
-
+    
     respond_to do |format|
       if @art.save
         format.html { redirect_to @art, :notice => 'Art was successfully created.' }
