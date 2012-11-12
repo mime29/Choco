@@ -1,4 +1,25 @@
-<%= form_for @art, :html => { :class => 'form-horizontal' } do |f| %>
+
+ <div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+        <a class="brand" href="#">Chocochomp admin</a>
+        <div class="nav-collapse">
+          <ul class="nav">
+            <li><%= link_to "Portfolios", portfolios_path %></li>
+            <li><%= link_to "Galleries", galleries_path %></li>
+            <li><%= link_to "Arts", arts_path %></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<%= form_for @art, :html => {:multipart=>true, :class => 'form-horizontal' } do |f| %>
   <div class="control-group">
     <%= f.label :title, :class => 'control-label' %>
     <div class="controls">
