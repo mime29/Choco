@@ -16,6 +16,10 @@ gem 'aws-s3', '0.6.2', :require => 'aws/s3'
 # in production environments by default.
 
 gem 'sass-rails',   '~> 3.2.3'
+gem "therubyracer"
+gem "less-rails"
+gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
+
 group :assets do
   gem 'coffee-rails', '~> 3.2.1'
 
@@ -23,10 +27,7 @@ group :assets do
   # gem 'therubyracer', :platforms => :ruby
 
   gem 'uglifier', '>= 1.0.3'
-  gem "therubyracer"
-  gem "less-rails"
-  gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
-end
+  end
 
 gem 'jquery-rails'
 
