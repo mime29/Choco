@@ -49,7 +49,7 @@ class ArtsController < ApplicationController
     
     params[:art][:file] = url
     @art = Art.new(params[:art])
-    
+
     respond_to do |format|
       if @art.save
         format.html { redirect_to @art, :notice => 'Art was successfully created.' }
@@ -87,5 +87,10 @@ class ArtsController < ApplicationController
       format.html { redirect_to arts_url }
       format.json { head :no_content }
     end
+  end
+  
+  def sanitize_filename(file_name)
+    just_filename = File.basename(file_name)
+    just_filename.sub(/[^\w\.\-]/,'_')
   end
 end
