@@ -1,4 +1,7 @@
 class GalleriesController < ApplicationController
+
+  @@BUCKET = "chocochomp"
+
   # GET /galleries
   # GET /galleries.json
   def index
@@ -40,14 +43,14 @@ class GalleriesController < ApplicationController
   # POST /galleries
   # POST /galleries.json
   def create
+    ## S3
 
     uploaded_io = params[:gallery][:thumbnail]
-    file_path = Rails.root.join('../public', 'images', 'thumbnails', uploaded_io.original_filename)
-    File.open(file_path, 'w') do |file|
-      file.write(uploaded_io.read)
-    end
-
-    params[:gallery][:thumbnail] = '/images' << '/thumbnails/' << uploaded_io.original_filename
+    filename = sanitize_filename(uploaded_io.original_filename)
+    AWS::S3::S3Object.store(filename, fileUp['datafile'].read, @@BUCKET, :access => :public_read)
+    url = AWS::S3::S3Object.url_for(filename, @@BUCKET, :authenticated => false)
+    
+    params[:gallery][:thumbnail] = url
     @gallery = Gallery.new(params[:gallery])
 
     respond_to do |format|
@@ -80,6 +83,9 @@ class GalleriesController < ApplicationController
   # DELETE /galleries/1
   # DELETE /galleries/1.json
   def destroy
+    AWS::S3::S3Object.find(@gallery.thumbnail, @@BUCKET).delete
+    @image.destroy
+
     @gallery = Gallery.find(params[:id])
     @gallery.destroy
 
@@ -89,3 +95,11 @@ class GalleriesController < ApplicationController
     end
   end
 end
+
+private
+  def sanitize_filename(file_name)
+    just_filename = File.basename(file_name)
+    just_filename.sub(/[^\w\.\-]/,'_')
+  end
+end
+
