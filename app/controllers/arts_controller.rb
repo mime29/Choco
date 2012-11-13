@@ -47,8 +47,8 @@ class ArtsController < ApplicationController
 
     uploaded_io = params[:art][:file]
     filename = sanitize_filename(uploaded_io.original_filename)
-    AWS::S3::S3Object.store(filename, uploaded_io.read, @@BUCKET, :access => :public_read)
-    url = AWS::S3::S3Object.url_for(filename, @@BUCKET, :authenticated => false)
+    AWS::S3::S3Object.store("arts/pic" + Time.now.to_i.to_s + filename, uploaded_io.read, @@BUCKET, :access => :public_read)
+    url = AWS::S3::S3Object.url_for("arts/pic" + Time.now.to_i.to_s + filename, @@BUCKET, :authenticated => false)
     
     params[:art][:file] = url
     @art = Art.new(params[:art])
@@ -83,9 +83,15 @@ class ArtsController < ApplicationController
   # DELETE /arts/1
   # DELETE /arts/1.json
   def destroy
+    begin
+      AWS::S3::S3Object.find(@art.file, @@BUCKET).delete
+    rescue Exception=>e
+      # handle e
+    end
+
     @art = Art.find(params[:id])
     @art.destroy
-
+      
     respond_to do |format|
       format.html { redirect_to arts_url }
       format.json { head :no_content }

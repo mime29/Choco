@@ -47,8 +47,8 @@ class GalleriesController < ApplicationController
 
     uploaded_io = params[:gallery][:thumbnail]
     filename = sanitize_filename(uploaded_io.original_filename)
-    AWS::S3::S3Object.store(filename, uploaded_io.read, @@BUCKET, :access => :public_read)
-    url = AWS::S3::S3Object.url_for(filename, @@BUCKET, :authenticated => false)
+    AWS::S3::S3Object.store("galleries/pic" + Time.now.to_i.to_s + filename , uploaded_io.read, @@BUCKET, :access => :public_read)
+    url = AWS::S3::S3Object.url_for("galleries/pic" + Time.now.to_i.to_s + filename, @@BUCKET, :authenticated => false)
     
     params[:gallery][:thumbnail] = url
     @gallery = Gallery.new(params[:gallery])
@@ -83,9 +83,12 @@ class GalleriesController < ApplicationController
   # DELETE /galleries/1
   # DELETE /galleries/1.json
   def destroy
-    AWS::S3::S3Object.find(@gallery.thumbnail, @@BUCKET).delete
-    @image.destroy
-
+    begin
+      AWS::S3::S3Object.find(@gallery.thumbnail, @@BUCKET).delete
+    rescue Exception=>e
+      # handle e
+    end
+      
     @gallery = Gallery.find(params[:id])
     @gallery.destroy
 
