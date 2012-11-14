@@ -1,9 +1,9 @@
 class CreateArts < ActiveRecord::Migration
   def change
     create_table :arts do |t|
-      t.text :title
-      t.text :description
-      t.text :file
+      t.text :title, :limit => nil
+      t.text :description, :limit => nil
+      t.text :file, :limit => nil
       t.references :gallery
 
       t.timestamps

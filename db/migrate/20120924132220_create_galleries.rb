@@ -1,10 +1,10 @@
 class CreateGalleries < ActiveRecord::Migration
   def change
     create_table :galleries do |t|
-      t.text :title
-      t.text :subtitle
+      t.text :title, :limit => nil
+      t.text :subtitle, :limit => nil
       t.integer :likes
-      t.text :thumbnail
+      t.text :thumbnail, :limit => nil
       t.references :portfolio
 
       t.timestamps
