@@ -47,8 +47,9 @@ class GalleriesController < ApplicationController
 
     uploaded_io = params[:gallery][:thumbnail]
     filename = sanitize_filename(uploaded_io.original_filename)
-    AWS::S3::S3Object.store("galleries/pic" + Time.now.to_i.to_s + filename , uploaded_io.read, @@BUCKET, :access => :public_read)
-    url = AWS::S3::S3Object.url_for("galleries/pic" + Time.now.to_i.to_s + filename, @@BUCKET, :authenticated => false)
+    filepath = "galleries/pic" + Time.now.to_i.to_s + filename 
+    AWS::S3::S3Object.store(filepath, uploaded_io.read, @@BUCKET, :access => :public_read)
+    url = AWS::S3::S3Object.url_for(filepath + filename, @@BUCKET, :authenticated => false)
     
     params[:gallery][:thumbnail] = url
     @gallery = Gallery.new(params[:gallery])

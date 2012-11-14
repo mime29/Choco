@@ -47,8 +47,9 @@ class ArtsController < ApplicationController
 
     uploaded_io = params[:art][:file]
     filename = sanitize_filename(uploaded_io.original_filename)
-    AWS::S3::S3Object.store("arts/pic" + Time.now.to_i.to_s + filename, uploaded_io.read, @@BUCKET, :access => :public_read)
-    url = AWS::S3::S3Object.url_for("arts/pic" + Time.now.to_i.to_s + filename, @@BUCKET, :authenticated => false)
+    filepath = "arts/pic" + Time.now.to_i.to_s + filename
+    AWS::S3::S3Object.store(filepath, uploaded_io.read, @@BUCKET, :access => :public_read)
+    url = AWS::S3::S3Object.url_for(filepath, @@BUCKET, :authenticated => false)
     
     params[:art][:file] = url
     @art = Art.new(params[:art])
