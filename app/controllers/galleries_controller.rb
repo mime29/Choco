@@ -70,6 +70,22 @@ class GalleriesController < ApplicationController
   def update
     @gallery = Gallery.find(params[:id])
 
+    #We need to update the S3 file too
+    #1- Remove the old file
+    begin
+      AWS::S3::S3Object.find(@gallery.thumbnail, @@BUCKET).delete
+    rescue Exception=>e
+      # handle e
+    end
+
+    #2- Add the new file
+    uploaded_io = params[:gallery][:thumbnail]
+    filename = sanitize_filename(uploaded_io.original_filename)
+    filepath = "arts/pic" + Time.now.to_i.to_s + filename
+    AWS::S3::S3Object.store(filepath, uploaded_io.read, @@BUCKET, :access => :public_read)
+    url = AWS::S3::S3Object.url_for(filepath, @@BUCKET, :authenticated => false)
+    params[:gallery][:thumbnail] = url
+
     respond_to do |format|
       if @gallery.update_attributes(params[:gallery])
         format.html { redirect_to @gallery, :notice => 'Gallery was successfully updated.' }
@@ -84,13 +100,14 @@ class GalleriesController < ApplicationController
   # DELETE /galleries/1
   # DELETE /galleries/1.json
   def destroy
+    @gallery = Gallery.find(params[:id])
+
     begin
       AWS::S3::S3Object.find(@gallery.thumbnail, @@BUCKET).delete
     rescue Exception=>e
       # handle e
     end
-      
-    @gallery = Gallery.find(params[:id])
+    
     @gallery.destroy
 
     respond_to do |format|

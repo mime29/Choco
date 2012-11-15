@@ -70,6 +70,22 @@ class ArtsController < ApplicationController
   def update
     @art = Art.find(params[:id])
 
+    #We need to update the S3 file too
+    #1- Remove the old file
+    begin
+      AWS::S3::S3Object.find(@art.file, @@BUCKET).delete
+    rescue Exception=>e
+      # handle e
+    end
+
+    #2- Add the new file
+    uploaded_io = params[:art][:file]
+    filename = sanitize_filename(uploaded_io.original_filename)
+    filepath = "arts/pic" + Time.now.to_i.to_s + filename
+    AWS::S3::S3Object.store(filepath, uploaded_io.read, @@BUCKET, :access => :public_read)
+    url = AWS::S3::S3Object.url_for(filepath, @@BUCKET, :authenticated => false)
+    params[:art][:file] = url
+
     respond_to do |format|
       if @art.update_attributes(params[:art])
         format.html { redirect_to @art, :notice => 'Art was successfully updated.' }
@@ -84,13 +100,14 @@ class ArtsController < ApplicationController
   # DELETE /arts/1
   # DELETE /arts/1.json
   def destroy
+    @art = Art.find(params[:id])
+
     begin
       AWS::S3::S3Object.find(@art.file, @@BUCKET).delete
     rescue Exception=>e
       # handle e
     end
 
-    @art = Art.find(params[:id])
     @art.destroy
       
     respond_to do |format|
