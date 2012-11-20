@@ -1,5 +1,7 @@
 class GalleriesController < ApplicationController
 
+  before_filter :authenticate_user!
+  
   @@BUCKET = "chocochomp"
 
   # GET /galleries

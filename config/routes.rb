@@ -1,5 +1,7 @@
 Choco::Application.routes.draw do
 
+  devise_for :users
+
   resources :portfolios
 
   resources :galleries

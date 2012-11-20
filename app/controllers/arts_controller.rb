@@ -1,5 +1,6 @@
 class ArtsController < ApplicationController
 
+  before_filter :authenticate_user!
   @@BUCKET = "chocochomp"
   
   # GET /arts

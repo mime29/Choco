@@ -1,14 +1,20 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.8'
+gem 'rails', '3.2.9'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-#gem 'sqlite3'
-gem 'pg'
+gem 'sqlite3'
+#gem 'pg'
 
 gem 'json'
+
+# Authentication
+gem 'devise'
+
+# Authorization
+
 
 gem 'aws-s3', '0.6.2', :require => 'aws/s3'
 
