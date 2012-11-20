@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121120101256) do
+ActiveRecord::Schema.define(:version => 20121120113522) do
 
   create_table "arts", :force => true do |t|
     t.text     "title"
@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(:version => 20121120101256) do
     t.integer  "portfolio_id"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
+    t.string   "type"
   end
 
   add_index "galleries", ["portfolio_id"], :name => "index_galleries_on_portfolio_id"

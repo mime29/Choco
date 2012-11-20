@@ -103,7 +103,9 @@
 							<span class="bleu1"><%= gallery.subtitle %></span>
 						</div>
 						<div class="titre sprite-global selectionSemaineBGT_png">
-							<span>// Prints</span>
+							<span>// <%= gallery.work %></span>
+							link_to_remote "LikeButton", :controller => :gallery, :action => :like, :id => gallery.id
+							<%=button_to '+1',:action=>:like,:id=>gallery.id%>
 						</div>
 						<div class="brownBar"></div>
 					</a>

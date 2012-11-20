@@ -67,6 +67,12 @@ class GalleriesController < ApplicationController
     end
   end
 
+  def like
+    @gallery = Gallery.find(params[:id])
+    @gallery.increment!(:value)
+    
+  end
+
   # PUT /galleries/1
   # PUT /galleries/1.json
   def update
