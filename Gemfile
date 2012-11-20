@@ -14,7 +14,7 @@ gem 'json'
 gem 'devise'
 
 # Authorization
-
+gem "cancan"
 
 gem 'aws-s3', '0.6.2', :require => 'aws/s3'
 

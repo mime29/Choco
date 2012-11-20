@@ -11,12 +11,12 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121120054816) do
+ActiveRecord::Schema.define(:version => 20121120101256) do
 
   create_table "arts", :force => true do |t|
-    t.string   "title"
-    t.string   "description"
-    t.string   "file"
+    t.text     "title"
+    t.text     "description"
+    t.text     "file"
     t.integer  "gallery_id"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
@@ -25,10 +25,10 @@ ActiveRecord::Schema.define(:version => 20121120054816) do
   add_index "arts", ["gallery_id"], :name => "index_arts_on_gallery_id"
 
   create_table "galleries", :force => true do |t|
-    t.string   "title"
-    t.string   "subtitle"
+    t.text     "title"
+    t.text     "subtitle"
     t.integer  "likes"
-    t.string   "thumbnail"
+    t.text     "thumbnail"
     t.integer  "portfolio_id"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
@@ -40,6 +40,17 @@ ActiveRecord::Schema.define(:version => 20121120054816) do
     t.string   "title"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "roles", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "roles_users", :id => false, :force => true do |t|
+    t.integer "role_id"
+    t.integer "user_id"
   end
 
   create_table "users", :force => true do |t|
