@@ -12,7 +12,9 @@ Role.create(:name => 'Admin')
 Role.create(:name => 'Owner')
 
 User.delete_all
-u = User.create(:email => 'mikaellegoff@gmail.com', :password => '123456', :password_confirmation => '123456')
+u1 = User.create(:email => 'mikaellegoff@gmail.com', :password => 'niania', :password_confirmation => 'niania')
 # Role.all.each { |role| u.roles << role }
-u.roles << Role.find_by_name("Admin")
+u1.roles << Role.find_by_name("Admin")
 
+u2 = User.create(:email => 'jeremy.godefroid@gmail.com', :password => 'tokyo', :password_confirmation => 'tokyo')
+u2.roles << Role.find_by_name("Admin")

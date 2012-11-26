@@ -3,11 +3,12 @@ body{
 	/*padding:0px;*/
 	font-family: Arial;
 	font-size: 1em;
-	line-height: 13px;
+	line-height: 16px;
 	margin:0px;
 	height: 100%;
-	background: -moz-linear-gradient(100% 100% 90deg, #57483b, #7f6f61);
-	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#7f6f61), to(#57483b)) fixed;
+	background-image: url('Losange_BGblanc.png');
+	/*background: -moz-linear-gradient(100% 100% 90deg, #57483b, #7f6f61);
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#7f6f61), to(#57483b)) fixed;*/
 }
 
 A:link {text-decoration: none}
@@ -25,33 +26,35 @@ ul.listingSelection li {
 	position: relative;
 	margin-right: 14px;
 	margin-bottom:20px;
-	width: 237px;
-	height: 202px;
+	width: 225px;
+	height: 192px;
 }
 
 
 ul.listingSelection li div.titre {
 	position: absolute;
 	left: 0px;
-	bottom: 0px;
-	text-indent: 5px;
-	color:#FF6000;
+	bottom: 5px;
+	text-indent: 0px;
+	color:#333333;
+	text-align: center;
 	font-size: 0.7em;
 	font-family: Arial; 
-    font-weight: normal;
-	font-style:italic;
+    font-weight: bold;
+	font-style: normal;
 }
 
 ul.listingSelection li div.description {
 	position: absolute;
 	left: 0px;
 	width: 224px;
-	height: 34px;
-	bottom: 0px;
-	text-indent: 5px;
-	padding-top:2px;
-	background: rgba(0, 0, 0, 0.5);
-	color:#FFFFFF;
+	height: 30px;
+	bottom: 10px;
+	text-indent: 0px;
+	padding-top: 0px;
+	/*background: rgba(0, 0, 0, 0.5);*/
+	color:#CCCCCC;
+	text-align: center;
 	font-size: 0.7em;
 	font-family: Arial; 
     font-weight: normal; 
@@ -66,27 +69,30 @@ ul.listingSelection li div.description {
 	/*background: rgba(142, 142, 255, 0.6);*/
 }
 
-.brownBar {
+.heart {
 	position: absolute;
-	right: 0px;
+	right: 11px;
 	width: 11px;
 	height: 36px;
-	bottom: 0px;
-	background: -moz-linear-gradient(100% 100% 90deg, #57483b, #7f6f61);
-	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#7f6f61), to(#57483b));
-	/*background: rgba(145, 92, 57, 1);*/
+	bottom: 5px;
+	color:#CCCCCC;
+	text-align: right;
+	font-size: 0.7em;
+	font-family: Arial; 
+    font-weight: normal;
+	font-style: normal;
 }
 
 ul.listingSelection li a img{
 	width:223px;
 	height:149px;
 	border-style:solid;
-	border-width:7px;
-	border-color:#4a3d32;
+	border-width:1px;
+	border-color:#999999;
 }
 
 ul.listingSelection li:hover img{
-	border-color:#bce0f7;
+	border-color:#000000;
 }
 
 .mainContainer{
@@ -98,9 +104,23 @@ ul.listingSelection li:hover img{
 	width: 100%;
 }
 
+.pleaseVote{
+	position: absolute;
+	top: 70px;
+	height: 77px;
+	width: 115px;
+	margin-left: 40px;
+	background-image: url('Vote_txt.png');
+	background-repeat: no-repeat;
+}
+
 .titleContainer{
-	height:86px;
-	background-image:url('logo_blanc.png');
+	position: relative;
+	height:111px;
+	width:350px;
+	margin: 0px auto;
+	margin-top:30px;
+	background-image:url('Title.png');
 	background-repeat:no-repeat;
 }
 .themeSelectorContainer{
@@ -115,6 +135,7 @@ ul.listingSelection li:hover img{
 }
 
 .contentContainer{
+	padding-top:30px;
 	padding-left:16px;
 	width:97%;
 }
@@ -122,6 +143,7 @@ ul.listingSelection li:hover img{
 
 .contentEndingDots{
 	position:relative;
+	padding-left:16px;
 	float:left;
 	width:100%;
 	font-size: 1.4em;
@@ -130,6 +152,7 @@ ul.listingSelection li:hover img{
 
 .copyrightContainer{
 	position:relative;
+	padding-left:16px;
 	float:left;
 	width:100%;
 	font-size: 0.7em;

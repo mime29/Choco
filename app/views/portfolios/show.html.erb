@@ -74,9 +74,8 @@
 	<div class="titleContainer">
 		
 	</div>
-	<div class="themeSelectorContainer">
-		<div class="themeBrown"><a href="?style=ChocoChomp" rel="ChocoChomp" class="styleswitch"><img src="/assets/carre_marron.png"/></a></div>
-		<div class="themeWhite"><a href="?style=ChocoChompWhite" rel="ChocoChompWhite" class="styleswitch"><img src="/assets/carre_blanc.png"/></a></div>
+	<div class="pleaseVote">
+		
 	</div>
 	
 	<div class="contentContainer">
@@ -88,9 +87,9 @@
 						<span class="bleu1">Information &bull; Who?</span>
 					</div>
 					<div class="titre sprite-global selectionSemaineBGT_png">
-						<span>// Contact</span>
+						<span>CONTACT</span>
 					</div>
-					<div class="brownBar"></div>
+					<div class="heart">00♥</div>
 				</a>
 				
 			</li>
@@ -103,11 +102,11 @@
 							<span class="bleu1"><%= gallery.subtitle %></span>
 						</div>
 						<div class="titre sprite-global selectionSemaineBGT_png">
-							<span>// <%= gallery.work %></span>
+							<span><%= gallery.work %></span>
 							link_to_remote "LikeButton", :controller => :gallery, :action => :like, :id => gallery.id
 							<%=button_to '+1',:action=>:like,:id=>gallery.id%>
 						</div>
-						<div class="brownBar"></div>
+						<div class="heart">♥</div>
 					</a>
 
 				</li>
@@ -116,7 +115,7 @@
 		</ul>
 	
 		<div class="contentEndingDots">
-			&bull;&bull;&bull;
+			&bull;
 		</div>
 		<div class="copyrightContainer">
 			Chocochomp&nbsp;&bull;&nbsp;Copyright@07-13
