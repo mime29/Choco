@@ -105,8 +105,9 @@
 							<span><%= gallery.title %></span>
 							<%# link_to_remote "LikeButton", :controller => :gallery, :action => :like, :id => gallery.id %>
 							<%#=button_to '+1',:action=>:like,:id=>gallery.id%>
+
 						</div>
-						<div class="heart">♥</div>
+						<div class="heart"><% link_to_remote "Heart", :url => { :controller => :gallery, :action => 'add_heart' } , :update => { :success => "cart", :failure => "error" } %>♥</div>
 					</a>
 
 				</li>
