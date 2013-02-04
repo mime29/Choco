@@ -1,7 +1,7 @@
 class GalleriesController < ApplicationController
-
+  helper_method :like
   before_filter :authenticate_user!
-  load_and_authorize_resource
+  # load_and_authorize_resource
   @@BUCKET = "chocochomp"
 
   # GET /galleries
@@ -69,9 +69,19 @@ class GalleriesController < ApplicationController
 
   def like
     @gallery = Gallery.find(params[:id])
-    @gallery.increment!(:value)
+    @gallery.increment!("likes", by = 1)
     
+    respond_to do |format|
+      format.html # new.html.erb
+      format.json { render :json => @gallery }
+    end
   end
+
+  # # PUT /galleries/1/add_heart
+  # def add_heart(gal_id)
+  #   @gallery = Gallery.find_by_id(gal_id)
+  #   @gallery.update_attribute("likes", @gallery.likes + 1)
+  # end
 
   # PUT /galleries/1
   # PUT /galleries/1.json

@@ -7,7 +7,11 @@ Choco::Application.routes.draw do
 
   resources :portfolios
 
-  resources :galleries
+  resources :galleries do
+    member do
+      put 'like'
+    end
+  end
 
   resources :arts
 

@@ -1,4 +1,5 @@
-	
+
+
 	<script>
 		$(document).ready(function(){
 			/*$('div.contentContainer> div').hide();  
@@ -89,7 +90,8 @@
 					<div class="titre sprite-global selectionSemaineBGT_png">
 						<span>CONTACT</span>
 					</div>
-					<div class="heart">00♥</div>
+					<div class="heart">
+						01♥</div>
 				</a>
 				
 			</li>
@@ -107,7 +109,12 @@
 							<%#=button_to '+1',:action=>:like,:id=>gallery.id%>
 
 						</div>
-						<div class="heart"><% link_to_remote "Heart", :url => { :controller => :gallery, :action => 'add_heart' } , :update => { :success => "cart", :failure => "error" } %>♥</div>
+						<div class="heart">
+							<%= link_to('Heart', like_gallery_path(gallery), {:method => :put, :remote => true} ) %>
+							<%= link_to("Heart", gallery_path(gallery), :action => "like", :method => :put ,  :remote => true) %>♥
+							<%= link_to("Heart", :controller => :galleries, :action => "like", :method => :put ,  :remote => true) %>
+						</div>
+						<!--  , :update => { :success => "cart", :failure => "error" } -->
 					</a>
 
 				</li>
