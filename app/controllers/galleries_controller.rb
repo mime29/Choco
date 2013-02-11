@@ -92,6 +92,8 @@ class GalleriesController < ApplicationController
           return numberValue
         end
       end
+    else
+      return "00"
     end
   end
 

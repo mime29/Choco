@@ -27,6 +27,8 @@ module ApplicationHelper
           return numberValue
         end
       end
+    else
+      return "00"
     end
   end
 
