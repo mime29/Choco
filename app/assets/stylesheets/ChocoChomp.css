@@ -81,6 +81,27 @@ ul.listingSelection li div.description {
 	font-family: Arial; 
     font-weight: normal;
 	font-style: normal;
+	text-decoration: none;
+}
+
+.heart a:link {
+	color:#CCCCCC;
+	text-decoration: none;
+}
+
+.heart a:visited {
+	color:#CCCCCC;
+	text-decoration: none;
+}
+
+.heart a:active {
+	color:#CCCCCC;
+	text-decoration: none;
+}
+
+.heart a:hover {
+	color:#CCCCCC;
+	text-decoration: none;
 }
 
 ul.listingSelection li a img{

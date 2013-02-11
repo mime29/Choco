@@ -1,6 +1,6 @@
 
 
-	<script>
+  	<script>
 		$(document).ready(function(){
 			/*$('div.contentContainer> div').hide();  
 			  $('div.contentContainer> h3').click(function() {
@@ -110,11 +110,13 @@
 
 						</div>
 						<div class="heart">
-							<%= link_to('Heart', like_gallery_path(gallery), {:method => :put, :remote => true} ) %>
-							<%= link_to("Heart", gallery_path(gallery), :action => "like", :method => :put ,  :remote => true) %>♥
-							<%= link_to("Heart", :controller => :galleries, :action => "like", :method => :put ,  :remote => true) %>
-						</div>
-						<!--  , :update => { :success => "cart", :failure => "error" } -->
+							<%= link_to(to_2digits(gallery.likes) + "♥", like_gallery_path(gallery), {:id => "like_link"+index.to_s, :method => :put, :remote => true} ) %>
+							<script>
+								$("#like_link<%= index.to_s %>")
+									.bind("ajax:success", function(evt, data, status, xhr){
+										$("#like_link<%= index.to_s %>").html(data+"♥");
+									});
+							</script>
 					</a>
 
 				</li>

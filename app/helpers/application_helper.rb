@@ -15,4 +15,19 @@ module ApplicationHelper
 	end
     html
   end
+
+  def to_2digits(numberValue)
+    if !numberValue.nil?
+      if numberValue < 10
+        return "0"+numberValue.to_s
+      else
+        if numberValue > 99
+          return 99
+        else
+          return numberValue
+        end
+      end
+    end
+  end
+
 end

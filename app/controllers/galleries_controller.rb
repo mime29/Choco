@@ -72,8 +72,26 @@ class GalleriesController < ApplicationController
     @gallery.increment!("likes", by = 1)
     
     respond_to do |format|
-      format.html # new.html.erb
-      format.json { render :json => @gallery }
+      format.html #need for ajax with html datatype 
+      format.json #need for ajax with json datatype
+      format.js {
+        #render :nothing => true
+        render :js => to_2digits(@gallery.likes)
+      }
+    end
+  end
+
+  def to_2digits(numberValue)
+    if !numberValue.nil?
+      if numberValue < 10
+        return "0"+numberValue.to_s
+      else
+        if numberValue > 99
+          return 99
+        else
+          return numberValue
+        end
+      end
     end
   end
 
@@ -97,12 +115,14 @@ class GalleriesController < ApplicationController
     end
 
     #2- Add the new file
-    uploaded_io = params[:gallery][:thumbnail]
-    filename = sanitize_filename(uploaded_io.original_filename)
-    filepath = "arts/pic" + Time.now.to_i.to_s + filename
-    AWS::S3::S3Object.store(filepath, uploaded_io.read, @@BUCKET, :access => :public_read)
-    url = AWS::S3::S3Object.url_for(filepath, @@BUCKET, :authenticated => false)
-    params[:gallery][:thumbnail] = url
+    if !params[:gallery][:thumbnail].nil?
+      uploaded_io = params[:gallery][:thumbnail]
+      filename = sanitize_filename(uploaded_io.original_filename)
+      filepath = "arts/pic" + Time.now.to_i.to_s + filename
+      AWS::S3::S3Object.store(filepath, uploaded_io.read, @@BUCKET, :access => :public_read)
+      url = AWS::S3::S3Object.url_for(filepath, @@BUCKET, :authenticated => false)
+      params[:gallery][:thumbnail] = url
+    end
 
     respond_to do |format|
       if @gallery.update_attributes(params[:gallery])
