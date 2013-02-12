@@ -1,6 +1,6 @@
 class GalleriesController < ApplicationController
   helper_method :like
-  before_filter :authenticate_user!
+  before_filter :authenticate_user!, :except => [:like]
   # load_and_authorize_resource
   @@BUCKET = "chocochomp"
 
