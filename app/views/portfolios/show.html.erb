@@ -1,4 +1,8 @@
-
+<% content_for :header do %>
+	<%= stylesheet_link_tag    "ChocoDiv", :media => "all" %>
+	<%= stylesheet_link_tag    "ChocoChomp", :media => "all", :title=>"ChocoChomp", :rel=>"stylesheet" %>
+	<%= stylesheet_link_tag    "ChocoChompWhite", :media => "all", :title=>"ChocoChompWhite", :rel=>"alternate stylesheet" %>
+<% end %>
 
   	<script>
 		$(document).ready(function(){
@@ -17,7 +21,13 @@
 			});*/
 			  
 			$("a#inline").fancybox({
-				'titleShow'     : false
+				'titleShow'     : false,
+				beforeShow: function () {
+		            /* Disable right click */
+		            $.fancybox.wrap.bind("contextmenu", function (e) {
+		                return false; 
+		            });
+		        }
 			});
 			
 			$("a.grouped_elements").fancybox();
@@ -56,7 +66,16 @@
 						'transitionOut'		: 'none',
 						'type'              : 'image',
 						'changeFade'        : 150,
-						'titlePosition'  : 'over'
+						'titlePosition'  : 'over',
+						beforeShow: function () {
+				            /* Disable right click */
+				            $.fancybox.wrap.bind("contextmenu", function (e) {
+				                return false; 
+				            });
+				        },
+				        afterLoad : function() {
+		                this.title = '[' + (this.index + 1) + ' of ' + this.group.length + '] ' + (this.title ? this.title : 'No Title');
+		            	}
 					});
 				});
 			
