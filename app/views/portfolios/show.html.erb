@@ -21,7 +21,9 @@
 			});*/
 			  
 			$("a#inline").fancybox({
-				'titleShow'     : false,
+				helpers:  {
+			        title:  null
+			    },
 				beforeShow: function () {
 		            /* Disable right click */
 		            $.fancybox.wrap.bind("contextmenu", function (e) {
@@ -66,7 +68,11 @@
 						'transitionOut'		: 'none',
 						'type'              : 'image',
 						'changeFade'        : 150,
-						'titlePosition'  : 'over',
+						helpers : {
+					        title: {
+					            type: 'inside'
+					        }
+					    },
 						beforeShow: function () {
 				            /* Disable right click */
 				            $.fancybox.wrap.bind("contextmenu", function (e) {
@@ -74,7 +80,7 @@
 				            });
 				        },
 				        afterLoad : function() {
-		                this.title = '[' + (this.index + 1) + ' of ' + this.group.length + '] ' + (this.title ? this.title : 'No Title');
+				        	this.title = '<div class="title-left">' + (this.title ? this.title : 'No Title') + '</div><div class="title-right">' + (this.index + 1) + ' - ' + this.group.length + '</div>';
 		            	}
 					});
 				});

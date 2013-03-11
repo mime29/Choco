@@ -91,6 +91,21 @@ ul.listingSelection li div.description {
     font-weight: normal; 
 }
 
+.title-left{
+	position: relative;
+	float: left;
+	/*width: 100%;*/
+	text-align: left;
+	bottom:10px;
+}
+
+.title-right{
+	float:right;
+	position: relative;
+	text-align: right;
+	bottom:10px;
+}
+
 .sprite-global.selectionSemaineBGT_png {
 	width: 224px;
 	height: 20px;
