@@ -91,19 +91,51 @@ ul.listingSelection li div.description {
     font-weight: normal; 
 }
 
+/*//FANCYBOX RELATED*/
+.fancybox-skin {
+	position: relative;
+	background: #000000;
+	color: #FFFFFF;
+	text-shadow: none;
+	-webkit-border-radius: 0px;
+	-moz-border-radius: 0px;
+	border-radius: 0px;
+}
+
+.fancybox-title {
+	white-space: nowrap;
+}
+
 .title-left{
 	position: relative;
-	float: left;
-	/*width: 100%;*/
-	text-align: left;
-	bottom:10px;
+	/*display: inline-block;*/
+	float:left;
+	width: 30px;
+	font-family:"Arial",Georgia,Serif;
+	font-smooth: never;
+	color: #00f0ed;
+	text-align: center;
+	bottom:7px;
+	background-color: #000000;
+	padding-top: 4px;
+	padding-bottom: 4px;
 }
 
 .title-right{
-	float:right;
+	/*display: inline-block;*/
 	position: relative;
-	text-align: right;
-	bottom:10px;
+	text-align: left;
+	bottom:7px;
+	right:0px;
+	/*width:100%;*/
+	font-family:"Arial",Georgia,Serif;
+	font-smooth: never;
+	margin-left: 32px;
+	background-color: #000000;
+	padding-top: 4px;
+	padding-bottom: 4px;
+	padding-right:5px;
+	padding-left: 10px;
 }
 
 .sprite-global.selectionSemaineBGT_png {

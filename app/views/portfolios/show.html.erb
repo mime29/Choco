@@ -70,7 +70,7 @@
 						'changeFade'        : 150,
 						helpers : {
 					        title: {
-					            type: 'inside'
+					            type: 'outside'
 					        }
 					    },
 						beforeShow: function () {
@@ -80,7 +80,7 @@
 				            });
 				        },
 				        afterLoad : function() {
-				        	this.title = '<div class="title-left">' + (this.title ? this.title : 'No Title') + '</div><div class="title-right">' + (this.index + 1) + ' - ' + this.group.length + '</div>';
+				        	this.title = '<div class="title-left">' + (this.index + 1) + '/' + this.group.length + '</div><div class="title-right">' + (this.title ? this.title : 'No Title') + '</div>';
 		            	}
 					});
 				});
