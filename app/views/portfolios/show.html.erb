@@ -87,6 +87,11 @@
 			
 			<% end %>
 
+			//Init Vanilla masonry
+			var wall = new Masonry( document.getElementById('galleryList'), {
+			    columnWidth: 225,
+			    isFitWidth: true
+			 });
 
 		
      	});
@@ -105,54 +110,52 @@
 	</div>
 	
 	<div class="contentContainer">
-		<dev class="centerDiv">
-			<ul class="listingSelection">
-				<li>
-					<a id="inline" href="#data">
-						<img src="/assets/About.jpg" alt="" title="Jeremy Godefroid">
+		<ul class="listingSelection" id="galleryList">
+			<li class="gallery">
+				<a id="inline" href="#data">
+					<img src="/assets/About.jpg" alt="" title="Jeremy Godefroid">
+					<div class="description sprite-global selectionSemaineBGB_png">
+						<span class="bleu1">Information &bull; Who?</span>
+					</div>
+					<div class="titre sprite-global selectionSemaineBGT_png">
+						<span>CONTACT</span>
+					</div>
+				</a>
+				
+			</li>
+			<% i = 0 %>
+			<% Gallery.find(:all, :conditions=>['portfolio_id=?', @portfolio.id]).each_with_index do |gallery, index| %>
+				<li class="gallery"><% i = i+1 %>
+					<a  id="<%= 'gal' %><%= index %>" href="javascript:;" title="<%= gallery.title %>">
+						<img src="<%= gallery.thumbnail %>" alt=" " title="<%= gallery.title %>">
 						<div class="description sprite-global selectionSemaineBGB_png">
-							<span class="bleu1">Information &bull; Who?</span>
+							<span class="bleu1"><%= gallery.title %></span>
 						</div>
 						<div class="titre sprite-global selectionSemaineBGT_png">
-							<span>CONTACT</span>
+							<span><%= gallery.subtitle %></span>
+							<%# link_to_remote "LikeButton", :controller => :gallery, :action => :like, :id => gallery.id %>
+							<%#=button_to '+1',:action=>:like,:id=>gallery.id%>
+
 						</div>
+						<div class="heart">
+							<%= link_to(to_2digits(gallery.likes) + "♥", like_gallery_path(gallery), {:id => "like_link"+index.to_s, :method => :put, :remote => true} ) %>
+							<script>
+								$("#like_link<%= index.to_s %>")
+									.bind("ajax:success", function(evt, data, status, xhr){
+										$("#like_link<%= index.to_s %>").html(data+"♥");
+									});
+							</script>
 					</a>
-					
+
 				</li>
-				<% i = 0 %>
-				<% Gallery.find(:all, :conditions=>['portfolio_id=?', @portfolio.id]).each_with_index do |gallery, index| %>
-					<li><% i = i+1 %>
-						<a  id="<%= 'gal' %><%= index %>" href="javascript:;" title="<%= gallery.title %>">
-							<img src="<%= gallery.thumbnail %>" alt=" " title="<%= gallery.title %>">
-							<div class="description sprite-global selectionSemaineBGB_png">
-								<span class="bleu1"><%= gallery.title %></span>
-							</div>
-							<div class="titre sprite-global selectionSemaineBGT_png">
-								<span><%= gallery.subtitle %></span>
-								<%# link_to_remote "LikeButton", :controller => :gallery, :action => :like, :id => gallery.id %>
-								<%#=button_to '+1',:action=>:like,:id=>gallery.id%>
+			<% end %> 
 
-							</div>
-							<div class="heart">
-								<%= link_to(to_2digits(gallery.likes) + "♥", like_gallery_path(gallery), {:id => "like_link"+index.to_s, :method => :put, :remote => true} ) %>
-								<script>
-									$("#like_link<%= index.to_s %>")
-										.bind("ajax:success", function(evt, data, status, xhr){
-											$("#like_link<%= index.to_s %>").html(data+"♥");
-										});
-								</script>
-						</a>
-
-					</li>
-				<% end %> 
-
-			</ul>
-			<div class="contentEndingDots">
-				&bull;
-			</div>
-			<div class="copyrightContainer">
-				Chocochomp&nbsp;&bull;&nbsp;Copyright@07-13
-			</div>
+		</ul>
+		<div class="contentEndingDots">
+			&bull;
+		</div>
+		<div class="copyrightContainer">
+			Chocochomp&nbsp;&bull;&nbsp;Copyright@07-13
 		</div>
 	</div>
 </div>

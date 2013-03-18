@@ -26,27 +26,19 @@ A:visited {text-decoration: none}
 A:active {text-decoration: none}
 A:hover {text-decoration: none;}
 
-.centerDiv{
-	position: relative;
-	text-align: center;
-	width:100%;
-	float:left;
-}
-
 ul.listingSelection {
 	list-style: none;
-	padding:0px;
-	display: inline-block;
-	text-align: center;
+	width:100%;
+	margin:0px auto;
 }
 
-ul.listingSelection li {
+.gallery {
 	float: left;
 	position: relative;
-    display: block;
-    margin-right: 14px;
-	margin-bottom:20px;
-	width: 225px;
+    /*display: block;*/
+    margin-right: 15px;
+	/*margin-bottom:20px;*/
+	width: 210px;
 	height: 192px;
 }
 
