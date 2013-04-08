@@ -108,16 +108,17 @@ class GalleriesController < ApplicationController
   def update
     @gallery = Gallery.find(params[:id])
 
-    #We need to update the S3 file too
-    #1- Remove the old file
-    begin
-      AWS::S3::S3Object.find(@gallery.thumbnail, @@BUCKET).delete
-    rescue Exception=>e
-      # handle e
-    end
 
-    #2- Add the new file
     if !params[:gallery][:thumbnail].nil?
+      #We need to update the S3 file too
+      #1- Remove the old file
+      begin
+        AWS::S3::S3Object.find(@gallery.thumbnail, @@BUCKET).delete
+      rescue Exception=>e
+        # handle e
+      end
+
+      #2- Add the new file
       uploaded_io = params[:gallery][:thumbnail]
       filename = sanitize_filename(uploaded_io.original_filename)
       filepath = "arts/pic" + Time.now.to_i.to_s + filename

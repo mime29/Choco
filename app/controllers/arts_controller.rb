@@ -72,21 +72,23 @@ class ArtsController < ApplicationController
   def update
     @art = Art.find(params[:id])
 
-    #We need to update the S3 file too
-    #1- Remove the old file
-    begin
-      AWS::S3::S3Object.find(@art.file, @@BUCKET).delete
-    rescue Exception=>e
-      # handle e
-    end
+    if !params[:art][:file].nil?
+      #We need to update the S3 file too
+      #1- Remove the old file
+      begin
+        AWS::S3::S3Object.find(@art.file, @@BUCKET).delete
+      rescue Exception=>e
+        # handle e
+      end
 
-    #2- Add the new file
-    uploaded_io = params[:art][:file]
-    filename = sanitize_filename(uploaded_io.original_filename)
-    filepath = "arts/pic" + Time.now.to_i.to_s + filename
-    AWS::S3::S3Object.store(filepath, uploaded_io.read, @@BUCKET, :access => :public_read)
-    url = AWS::S3::S3Object.url_for(filepath, @@BUCKET, :authenticated => false)
-    params[:art][:file] = url
+      #2- Add the new file
+      uploaded_io = params[:art][:file]
+      filename = sanitize_filename(uploaded_io.original_filename)
+      filepath = "arts/pic" + Time.now.to_i.to_s + filename
+      AWS::S3::S3Object.store(filepath, uploaded_io.read, @@BUCKET, :access => :public_read)
+      url = AWS::S3::S3Object.url_for(filepath, @@BUCKET, :authenticated => false)
+      params[:art][:file] = url
+    end
 
     respond_to do |format|
       if @art.update_attributes(params[:art])
