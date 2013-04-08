@@ -7,7 +7,7 @@ class ArtsController < ApplicationController
   # GET /arts
   # GET /arts.json
   def index
-    @arts = Art.all
+    @arts = Art.order('arts.position ASC')
 
     respond_to do |format|
       format.html # index.html.erb
@@ -72,21 +72,23 @@ class ArtsController < ApplicationController
   def update
     @art = Art.find(params[:id])
 
-    #We need to update the S3 file too
-    #1- Remove the old file
-    begin
-      AWS::S3::S3Object.find(@art.file, @@BUCKET).delete
-    rescue Exception=>e
-      # handle e
-    end
+    if !params[:art][:file].nil?
+      #We need to update the S3 file too
+      #1- Remove the old file
+      begin
+        AWS::S3::S3Object.find(@art.file, @@BUCKET).delete
+      rescue Exception=>e
+        # handle e
+      end
 
-    #2- Add the new file
-    uploaded_io = params[:art][:file]
-    filename = sanitize_filename(uploaded_io.original_filename)
-    filepath = "arts/pic" + Time.now.to_i.to_s + filename
-    AWS::S3::S3Object.store(filepath, uploaded_io.read, @@BUCKET, :access => :public_read)
-    url = AWS::S3::S3Object.url_for(filepath, @@BUCKET, :authenticated => false)
-    params[:art][:file] = url
+      #2- Add the new file
+      uploaded_io = params[:art][:file]
+      filename = sanitize_filename(uploaded_io.original_filename)
+      filepath = "arts/pic" + Time.now.to_i.to_s + filename
+      AWS::S3::S3Object.store(filepath, uploaded_io.read, @@BUCKET, :access => :public_read)
+      url = AWS::S3::S3Object.url_for(filepath, @@BUCKET, :authenticated => false)
+      params[:art][:file] = url
+    end
 
     respond_to do |format|
       if @art.update_attributes(params[:art])
@@ -97,6 +99,18 @@ class ArtsController < ApplicationController
         format.json { render :json => @art.errors, :status => :unprocessable_entity }
       end
     end
+  end
+
+  def sort
+    # params[:arts].each_with_index do |id, index|
+    #   Art.update_all(['position=?', index+1], ['id=?', id])
+    # end
+    @arts = Art.all
+    @arts.each do |art|
+      art.position = params['art'].index(art.id.to_s) + 1
+      art.save
+    end
+    render :nothing => true
   end
 
   # DELETE /arts/1
