@@ -51,10 +51,10 @@
 				});
 				/*createCookie('style', styleName, 365);*/
 			}
-			<% Gallery.find(:all, :conditions=>['portfolio_id=?', @portfolio.id]).each_with_index do |gallery, index| %>
+			<% Gallery.find(:all, :conditions=>['portfolio_id=?', @portfolio.id], :order=>'position ASC').each_with_index do |gallery, index| %>
 				$("#<%= 'gal' %><%= index %>").click(function() {
 					$.fancybox([
-						<% arts = Art.find(:all, :conditions=>['gallery_id=?', gallery.id]) %>
+						<% arts = Art.find(:all, :conditions=>['gallery_id=?', gallery.id], :order=>'position ASC') %>
 						<% arts.each_with_index do |art, art_index| %>
 						{
 							'href' : '<%= art.file %>',
@@ -124,7 +124,7 @@
 				
 			</li>
 			<% i = 0 %>
-			<% Gallery.find(:all, :conditions=>['portfolio_id=?', @portfolio.id]).each_with_index do |gallery, index| %>
+			<% Gallery.find(:all, :conditions=>['portfolio_id=?', @portfolio.id], :order=>'position ASC').each_with_index do |gallery, index| %>
 				<li class="gallery"><% i = i+1 %>
 					<a  id="<%= 'gal' %><%= index %>" href="javascript:;" title="<%= gallery.title %>">
 						<img src="<%= gallery.thumbnail %>" alt=" " title="<%= gallery.title %>">

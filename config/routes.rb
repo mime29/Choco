@@ -11,6 +11,9 @@ Choco::Application.routes.draw do
     member do
       put 'like'
     end
+    collection do
+      post 'sort'
+    end
   end
 
   resources :arts do
