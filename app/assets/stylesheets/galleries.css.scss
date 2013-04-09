@@ -1,3 +1,14 @@
 // Place all the styles related to the Galleries controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+li .handle {
+  font-size: 12px;
+  cursor: move;
+  color: #777;
+}
+
+
+.gallery {
+	list-style: none;
+}

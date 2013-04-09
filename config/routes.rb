@@ -11,9 +11,16 @@ Choco::Application.routes.draw do
     member do
       put 'like'
     end
+    collection do
+      post 'sort'
+    end
   end
 
-  resources :arts
+  resources :arts do
+    collection do
+      post 'sort'
+    end
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

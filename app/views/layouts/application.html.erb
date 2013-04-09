@@ -8,6 +8,7 @@
   <%= yield(:header) %>
   <%= csrf_meta_tags %>
 </head>
+<%= yield :javascript %>
 <body>
 
 <% if !notice.nil? && !notice.empty? then %>

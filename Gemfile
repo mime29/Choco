@@ -31,6 +31,7 @@ gem 'sass-rails',   '~> 3.2.3'
 gem "therubyracer"
 gem "less-rails"
 gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
+gem "acts_as_list"
 
 group :assets do
   gem 'coffee-rails', '~> 3.2.1'

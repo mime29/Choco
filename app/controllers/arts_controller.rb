@@ -7,7 +7,7 @@ class ArtsController < ApplicationController
   # GET /arts
   # GET /arts.json
   def index
-    @arts = Art.all
+    @arts = Art.order('arts.position ASC')
 
     respond_to do |format|
       format.html # index.html.erb
@@ -99,6 +99,18 @@ class ArtsController < ApplicationController
         format.json { render :json => @art.errors, :status => :unprocessable_entity }
       end
     end
+  end
+
+  def sort
+    # params[:arts].each_with_index do |id, index|
+    #   Art.update_all(['position=?', index+1], ['id=?', id])
+    # end
+    @arts = Art.all
+    @arts.each do |art|
+      art.position = params['art'].index(art.id.to_s) + 1
+      art.save
+    end
+    render :nothing => true
   end
 
   # DELETE /arts/1

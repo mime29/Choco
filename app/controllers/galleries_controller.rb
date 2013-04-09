@@ -7,7 +7,7 @@ class GalleriesController < ApplicationController
   # GET /galleries
   # GET /galleries.json
   def index
-    @galleries = Gallery.all
+    @galleries = Gallery.order('galleries.position ASC')
 
     respond_to do |format|
       format.html # index.html.erb
@@ -136,6 +136,18 @@ class GalleriesController < ApplicationController
         format.json { render :json => @gallery.errors, :status => :unprocessable_entity }
       end
     end
+  end
+
+  def sort
+    # params[:galleries].each_with_index do |id, index|
+    #   Gallery.update_all(['position=?', index+1], ['id=?', id])
+    # end
+    @galleries = Gallery.all
+    @galleries.each do |gallery|
+      gallery.position = params['gallery'].index(gallery.id.to_s) + 1
+      gallery.save
+    end
+    render :nothing => true
   end
 
   # DELETE /galleries/1
