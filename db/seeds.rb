@@ -16,5 +16,5 @@ u1 = User.create(:email => 'mikaellegoff@gmail.com', :password => 'niania', :pas
 # Role.all.each { |role| u.roles << role }
 u1.roles << Role.find_by_name("Admin")
 
-u2 = User.create(:email => 'jeremy.godefroid@gmail.com', :password => 'tokyo', :password_confirmation => 'tokyo')
+u2 = User.create(:email => 'jeremygodefroid@gmail.com', :password => 'tokyo', :password_confirmation => 'tokyo')
 u2.roles << Role.find_by_name("Admin")
