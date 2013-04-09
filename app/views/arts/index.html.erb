@@ -59,9 +59,9 @@
 
 <ul id="arts">
   <div class="row">
-    <div class="span2"><%= model_class.human_attribute_name(:title) %></div>
+    <div class="span5"><%= model_class.human_attribute_name(:title) %></div>
     <div class="span2"><%= model_class.human_attribute_name(:description) %></div>
-    <div class="span4"><%= model_class.human_attribute_name(:file) %></div>
+    <div class="span1"><%= model_class.human_attribute_name(:file) %></div>
     <div class="span1"><%= model_class.human_attribute_name(:gallery_id) %></div>
     <div class="span1"><%=t '.actions', :default => t("helpers.actions") %></div>
     <div class="span1"><%=t '.actions', :default => t("helpers.actions") %></div>
@@ -69,9 +69,9 @@
   <% for art in @arts %>
     <%= content_tag_for :li, art do %>
       <div class="row handle">
-        <div class="span2"><%= link_to art.title, art_path(art) %></div>
+        <div class="span5"><%= link_to art.title, art_path(art) %></div>
         <div class="span2"><%= art.description %></div>
-        <div class="span4"><%= image_tag art.file, :height=>"32", :width=>"32" %></div>
+        <div class="span1"><%= image_tag art.file, :height=>"32", :width=>"32" %></div>
         <div class="span1"><%= art.gallery_id %></div>
         <div class="span1"><%= link_to t('.edit', :default => t("helpers.links.edit")),
                         edit_art_path(art), :class => 'btn btn-mini' %></div>
