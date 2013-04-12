@@ -1,3 +1,7 @@
+<% content_for :header do %>
+  <%= stylesheet_link_tag    "portfolios", :media => "all" %>
+<% end %>
+<%= javascript_include_tag "https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"%>
 
  <div class="navbar navbar-fixed-top">
     <div class="navbar-inner">
@@ -19,26 +23,34 @@
     </div>
   </div>
 
-<h1>Listing portfolios</h1>
+<%- model_class = Portfolio -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
+</div>
 
-<table>
-  <tr>
-    <th>Title</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<ul id="portfolios">
+  <div class="row">
+    <div class="span9"><%= model_class.human_attribute_name(:title) %></div>
+    <div class="span1"><%=t '.actions', :default => t("helpers.actions") %></div>
+    <div class="span1"><%=t '.actions', :default => t("helpers.actions") %></div>
+  </div>
+  <% for portfolio in @portfolios %>
+    <%= content_tag_for :li, portfolio do %>
+      <div class="row handle">
+        <div class="span9"><%= link_to portfolio.title, portfolio_path(portfolio) %></div>
+        <div class="span1"><%= link_to t('.edit', :default => t("helpers.links.edit")),
+                          edit_portfolio_path(portfolio), :class => 'btn btn-mini btn-block' %></div>
+        <div class="span1"><%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                          portfolio_path(portfolio),
+                          :method => :delete,
+                          :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                          :class => 'btn btn-mini btn-danger btn-block' %></div>
+      </div>
+    <% end %>
+  <% end %>
+</ul>
 
-<% @portfolios.each do |portfolio| %>
-  <tr>
-    <td><%= portfolio.title %></td>
-    <td><%= link_to 'Show', portfolio %></td>
-    <td><%= link_to 'Edit', edit_portfolio_path(portfolio) %></td>
-    <td><%= link_to 'Destroy', portfolio, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
 
-<br />
-
-<%= link_to 'New Portfolio', new_portfolio_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_portfolio_path,
+            :class => 'btn btn-primary' %>

@@ -69,17 +69,17 @@
   <% for art in @arts %>
     <%= content_tag_for :li, art do %>
       <div class="row handle">
-        <div class="span5"><%= link_to art.title, art_path(art) %></div>
+        <div class="span5"><%= link_to art.title, art_path(art), :class => "truncate" %></div>
         <div class="span2"><%= art.description %></div>
-        <div class="span1"><%= image_tag art.file, :height=>"32", :width=>"32" %></div>
+        <div class="span1"><%= image_tag art.file, :width=>"32", :height=>"32"  %></div>
         <div class="span1"><%= art.gallery_id %></div>
         <div class="span1"><%= link_to t('.edit', :default => t("helpers.links.edit")),
-                        edit_art_path(art), :class => 'btn btn-mini' %></div>
+                        edit_art_path(art), :class => 'btn btn-mini btn-block' %></div>
         <div class="span1"><%= link_to t('.destroy', :default => t("helpers.links.destroy")),
                         art_path(art),
                         :method => :delete,
                         :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-                        :class => 'btn btn-mini btn-danger' %></div>
+                        :class => 'btn btn-mini btn-danger btn-block' %></div>
       </div>
     <% end %>
   <% end %>

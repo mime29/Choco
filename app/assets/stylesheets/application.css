@@ -10,3 +10,7 @@
  *= require jquery.fancybox
  *= require bootstrap_and_overrides.css.less
  */
+
+.handle div{
+	padding: 0.5em 0 0.5em 0;
+}

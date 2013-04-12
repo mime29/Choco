@@ -3,12 +3,19 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 li .handle {
-  font-size: 12px;
-  cursor: move;
-  color: #777;
+	font-size: 12px;
+	cursor: move;
+	color: #777;
 }
-
 
 .art {
 	list-style: none;
+	padding-top: 0.2em;
+}
+
+.truncate {
+	display: block;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
 }
