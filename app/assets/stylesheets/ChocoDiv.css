@@ -241,7 +241,7 @@
 	height:50px;
 	width:50px;
 	margin-right:8px;
-	background-image:url('/assets/linkedin.png');
+	background-image:url('linkedin.png');
 }
 
 .chocoButtonsFb{
@@ -250,7 +250,7 @@
 	height:50px;
 	width:50px;
 	margin-right:8px;
-	background-image:url('/assets/facebook.png');
+	background-image:url('facebook.png');
 
 }
 
@@ -260,7 +260,7 @@
 	height:50px;
 	width:50px;
 	margin-right:8px;
-	background-image:url('/assets/mixi.png');
+	background-image:url('mixi.png');
 
 }
 
@@ -269,6 +269,6 @@
 	float:left;
 	height:50px;
 	width:50px;
-	background-image:url('/assets/vimeo.png');
+	background-image:url('vimeo.png');
 
 }

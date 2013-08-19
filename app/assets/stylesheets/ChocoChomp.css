@@ -104,7 +104,7 @@ ul.listingSelection li div.description {
 	text-indent: 0px;
 	padding-top: 0px;
 	/*background: rgba(0, 0, 0, 0.5);*/
-	color:#CCCCCC;
+	color:#999999;
 	text-align: center;
 	font-size: 0.7em;
 	font-family: Arial; 
@@ -204,14 +204,29 @@ ul.listingSelection li div.description {
 
 ul.listingSelection li a img{
 	width:223px;
-	height:149px;
+	height:149px;/*
 	border-style:solid;
 	border-width:1px;
+	border-color:#999999;*/
+}
+
+/*ul.listingSelection li:hover img{
+	border-color:#000000;
+}*/
+
+.thumbnailborder {
+	top:0px;
+	width:206px;
+	height:145px;
+	position: absolute;
+	float: left;
+	border-style:solid;
+	border-width:2px;
 	border-color:#999999;
 }
 
-ul.listingSelection li:hover img{
-	border-color:#000000;
+.thumbnailborder:hover {
+	border-color:rgba(0, 0, 0, 0.5);
 }
 
 .mainContainer{
@@ -260,7 +275,6 @@ ul.listingSelection li:hover img{
 	height:100%;
 	width:80%;
 }
-
 
 .contentEndingDots{
 	position:relative;
