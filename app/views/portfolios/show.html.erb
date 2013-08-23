@@ -138,6 +138,7 @@
 							<%#=button_to '+1',:action=>:like,:id=>gallery.id%>
 
 						</div>
+						<div class="thumbnailborder"></div>
 						<div class="heart">
 							<%= link_to(to_2digits(gallery.likes) + "♥", like_gallery_path(gallery), {:id => "like_link"+index.to_s, :method => :put, :remote => true} ) %>
 							<script>
@@ -148,7 +149,6 @@
 							</script>
 						</div>
 
-						<div class="thumbnailborder"></div>
 					</a>
 
 				</li>
