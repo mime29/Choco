@@ -244,9 +244,9 @@ ul.listingSelection li a img{
 
 .thumbnailborder:hover {
 	border-color:rgba(0, 0, 0, 0.4);
-	border-width:4px;
-	width:202px;
-	height:142px;
+	border-width:8px;
+	width:194px;
+	height:134px;
 }
 
 .mainContainer{
